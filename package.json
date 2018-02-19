@@ -21,7 +21,6 @@
     "mocha": "^5.0.1"
   },
   "dependencies": {
-    "node-fetch": "^2.0.0",
-    "xml-to-json-promise": "0.0.3"
+    "node-fetch": "^2.0.0"
   }
 }
