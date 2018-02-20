@@ -29,34 +29,45 @@ const CardAPI = new (class {
 class _AutoCard extends HTMLElement {
   connectedCallback() {
     const self = this
-    self.addEventListener('click', e => {
-      self.openLink()
-    });
-
     // todo need true solution
-    setTimeout(() => {
-      self.name = self.innerHTML
-      CardAPI.getMultiverseId(self.name)
-        .then(mid => self.loadMultiverseId(mid))
-    }, 100);
+    setTimeout(() => self.todoOnLoad(), 100);
   }
+  todoOnLoad() {
+    this.name = this.innerHTML
+    this.innerHTML = ''
 
-  getName() {
-    return this.name
+    const url = `http://magiccards.info/query?q=${this.name}`
+    const anchor = document.createElement('a')
+    anchor.setAttribute('href', url)
+    anchor.setAttribute('target', '_blank')
+    anchor.innerHTML = this.name
+    this.appendChild(anchor)
+    this.anchor = anchor
+  }
+}
+class CardText extends _AutoCard {}
+class CardImage extends _AutoCard {
+  todoOnLoad() {
+    super.todoOnLoad()
+    const self = this
+    CardAPI.getMultiverseId(self.name)
+      .then(mid => self.loadMultiverseId(mid))
   }
   loadMultiverseId(mid) {
     this.mid = mid
     if (this.mid){
-      this.innerHTML += '#' + mid
+      // todo get proper url
+      const url = `${mid}`
+      const image = document.createElement('img')
+      image.setAttribute('src', url)
+      image.setAttribute('alt', this.name)
+      image.setAttribute('title', this.name)
+      this.anchor.innerHTML = ''
+      this.anchor.appendChild(image)
+      this.image = image
     }
   }
-
-  openLink() {
-    console.log(this)
-  }
 }
-class CardText extends _AutoCard {}
-class CardImage extends _AutoCard {}
 
 customElements.define('card-text', CardText);
 customElements.define('card-image', CardImage);
