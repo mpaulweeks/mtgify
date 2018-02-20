@@ -1,10 +1,17 @@
 
 const CardAPI = new (class {
   constructor() {
-    this.multiverse = new Promise((resolve, reject) => {
-      // todo real promise from fetch
-      resolve({'fog': '12345'})
+    const self = this
+    self.multiverse = new Promise((resolve, reject) => {
+      self.multiverseResolve = lookup => resolve(lookup)
     })
+  }
+  init(baseUrl) {
+    const self = this
+    self.baseUrl = baseUrl
+    fetch(`${baseUrl}/json/Multiverse.lower.json`)
+      .then(res => res.json())
+      .then(lookup => self.multiverseResolve(lookup))
   }
   normalizeCardName(cardName) {
     return cardName.trim().toLowerCase()
@@ -49,7 +56,7 @@ class _AutoCard extends HTMLElement {
   }
 }
 class CardText extends _AutoCard {}
-class CardMedium extends _AutoCard {}
+class CardImage extends _AutoCard {}
 
 customElements.define('card-text', CardText);
-customElements.define('card-medium', CardMedium);
+customElements.define('card-image', CardImage);
