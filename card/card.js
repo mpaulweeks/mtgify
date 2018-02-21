@@ -76,8 +76,7 @@ class CardImage extends _AutoCard {
   loadMultiverseId(mid) {
     this.mid = mid
     if (this.mid){
-      // todo get proper url
-      const url = `${mid}`
+      const url = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${mid}&type=card`
       const image = document.createElement('img')
       image.setAttribute('src', url)
       image.setAttribute('alt', this.name)
