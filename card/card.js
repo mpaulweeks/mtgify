@@ -122,8 +122,7 @@ class CardList extends HTMLElement {
       .then(res => res.text())
       .then(text => self.renderText(text))
   }
-  renderText(text) {
-    const self = this;
+  categorizeCardList(text, lookup) {
     const cardTypes = {}
     const promises = []
     text.split('\n').forEach(line => {
@@ -135,7 +134,7 @@ class CardList extends HTMLElement {
       const split = trimmed.indexOf('x ')
       const quantity = trimmed.substring(0, split)
       const cardName = trimmed.substring(split + 2)
-      const promise = CardAPI.getCard(cardName)
+      const promise = lookup(cardName)
         .then(card => {
           if (!card){
             console.log('failed to find card', line)
@@ -159,8 +158,12 @@ class CardList extends HTMLElement {
         })
       promises.push(promise)
     })
-    Promise.all(promises)
-      .then(() => {
+    return Promise.all(promises).then(() => cardTypes)
+  }
+  renderText(text) {
+    const self = this;
+    self.categorizeCardList(text, cardName => CardAPI.getCard(cardName))
+      .then(cardTypes => {
         self.innerHTML = ''
         typeDisplay.forEach(type => {
           if (!cardTypes[type]){
