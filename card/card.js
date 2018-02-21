@@ -48,12 +48,7 @@ const CardAPI = new (class {
 
 class _AutoCard extends HTMLElement {
   connectedCallback() {
-    const self = this
-    // todo need true solution
-    setTimeout(() => self.todoOnLoad(), 100)
-  }
-  todoOnLoad() {
-    this.name = this.innerHTML
+    this.name = this.getAttribute('name')
     this.innerHTML = ''
 
     const url = `http://magiccards.info/query?q=${this.name}`
@@ -63,12 +58,16 @@ class _AutoCard extends HTMLElement {
     anchor.innerHTML = this.name
     this.appendChild(anchor)
     this.anchor = anchor
+
+    this.onLoad()
+  }
+  onLoad() {
+    // do nothing, children override
   }
 }
 class CardText extends _AutoCard {}
 class CardImage extends _AutoCard {
-  todoOnLoad() {
-    super.todoOnLoad()
+  onLoad() {
     const self = this
     CardAPI.getMultiverseId(self.name)
       .then(mid => self.loadMultiverseId(mid))
@@ -90,12 +89,6 @@ class CardImage extends _AutoCard {
 
 class CardList extends HTMLElement {
   connectedCallback() {
-    const self = this
-    // todo need true solution
-    setTimeout(() => self.todoOnLoad(), 100)
-  }
-  todoOnLoad() {
-    const self = this
     const listSrc = this.getAttribute('src')
     this.renderText(listSrc)
   }
