@@ -88,26 +88,6 @@ class CardImage extends _AutoCard {
   }
 }
 
-const lineRegex = /^[0-9]+x \w+$/
-const typePriority = [
-  'Land',
-  'Creature',
-  'Artifact',
-  'Enchantment',
-  'Planeswalker',
-  'Instant',
-  'Sorcery',
-].reverse()
-const typeDisplay = [
-  'Creature',
-  'Planeswalker',
-  'Artifact',
-  'Enchantment',
-  'Instant',
-  'Sorcery',
-  'Land',
-]
-
 class CardList extends HTMLElement {
   connectedCallback() {
     const self = this
@@ -117,59 +97,16 @@ class CardList extends HTMLElement {
   todoOnLoad() {
     const self = this
     const listSrc = this.getAttribute('src')
-    fetch(listSrc)
-      .then(res => res.text())
-      .then(text => self.renderText(text))
+    this.renderText(listSrc)
   }
-  categorizeCardList(text, lookup) {
-    const cardTypes = {}
-    const promises = []
-    text.split('\n').forEach(line => {
-      const trimmed = line.trim()
-      if (trimmed.length === 0){
-        return
-      }
-      // todo use regex
-      const split = trimmed.indexOf('x ')
-      const quantity = trimmed.substring(0, split)
-      const cardName = trimmed.substring(split + 2)
-      const promise = lookup(cardName)
-        .then(card => {
-          if (!card){
-            console.log('failed to find card', line)
-            return
-          }
-          let cardType = null
-          typePriority.forEach(type => {
-            if (card.types.includes(type)){
-              cardType = type
-            }
-          })
-          if (cardType){
-            if (!cardTypes[cardType]){
-              cardTypes[cardType] = []
-            }
-            cardTypes[cardType].push({
-              quantity: quantity,
-              card: card,
-            })
-          }
-        })
-      promises.push(promise)
-    })
-    return Promise.all(promises).then(() => cardTypes)
-  }
-  renderText(text) {
+  renderText(listSrc) {
     const self = this;
-    self.categorizeCardList(text, cardName => CardAPI.getCard(cardName))
-      .then(cardTypes => {
+    DeckListFromUrl(listSrc, cardName => CardAPI.getCard(cardName))
+      .then(data => {
         self.innerHTML = ''
-        typeDisplay.forEach(type => {
-          if (!cardTypes[type]){
-            return
-          }
-          self.innerHTML += `<h3>${type}</h3>`
-          cardTypes[type].forEach(card => {
+        data.forEach(typeData => {
+          self.innerHTML += `<h3>${typeData.type}</h3>`
+          typeData.cards.forEach(card => {
             self.innerHTML += `<div>${card.quantity}x ${card.card.name}</div>`
           })
         })
