@@ -101,6 +101,7 @@ class CardList extends HTMLElement {
   }
   renderText(listSrc) {
     const self = this;
+    self.innerHTML = 'loading deck list...'
     DeckListFromUrl(listSrc, cardName => CardAPI.getCard(cardName))
       .then(data => {
         self.innerHTML = ''
