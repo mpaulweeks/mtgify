@@ -2,4 +2,4 @@
 
 const MtgJson = require('../lib/MtgJson')
 
-MtgJson.generateMultiverseJson().then(msg => console.log(msg))
+MtgJson.generateMultiverseJson().then(msg => console.log('all done!', msg))

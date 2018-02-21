@@ -21,6 +21,8 @@
     "mocha": "^5.0.1"
   },
   "dependencies": {
+    "JSONStream": "^1.3.2",
+    "event-stream": "^3.3.4",
     "node-fetch": "^2.0.0",
     "unzip": "^0.1.11"
   }
