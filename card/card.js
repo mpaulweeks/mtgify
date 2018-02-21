@@ -2,8 +2,11 @@
 const CardAPI = new (class {
   constructor() {
     const self = this
-    self.multiverse = new Promise((resolve, reject) => {
-      self.multiverseResolve = lookup => resolve(lookup)
+    self.lookupMultiverse = new Promise((resolve, reject) => {
+      self.resolveMultiverse = lookup => resolve(lookup)
+    })
+    self.lookupAllCards = new Promise((resolve, reject) => {
+      self.resolveAllCards = lookup => resolve(lookup)
     })
   }
   init(baseUrl) {
@@ -11,7 +14,19 @@ const CardAPI = new (class {
     self.baseUrl = baseUrl
     fetch(`${baseUrl}/json/Multiverse.lower.json`)
       .then(res => res.json())
-      .then(lookup => self.multiverseResolve(lookup))
+      .then(lookup => self.resolveMultiverse(lookup))
+    fetch(`${baseUrl}/json/AllCards.json`)
+      .then(res => res.json())
+      .then(lookup => {
+        // todo this should be a ready file, like Multiverse
+        const lowered = {}
+        for (var key in lookup){
+          const card = lookup[key]
+          const loweredKey = self.normalizeCardName(card.name)
+          lowered[loweredKey] = card
+        }
+        self.resolveAllCards(lowered)
+      })
   }
   normalizeCardName(cardName) {
     return cardName.trim().toLowerCase()
@@ -21,7 +36,12 @@ const CardAPI = new (class {
   }
   getMultiverseId(cardName) {
     const self = this
-    return self.multiverse
+    return self.lookupMultiverse
+      .then(lookup => self.performLookup(lookup, cardName))
+  }
+  getCard(cardName) {
+    const self = this
+    return self.lookupAllCards
       .then(lookup => self.performLookup(lookup, cardName))
   }
 })()
@@ -30,7 +50,7 @@ class _AutoCard extends HTMLElement {
   connectedCallback() {
     const self = this
     // todo need true solution
-    setTimeout(() => self.todoOnLoad(), 100);
+    setTimeout(() => self.todoOnLoad(), 100)
   }
   todoOnLoad() {
     this.name = this.innerHTML
@@ -69,5 +89,92 @@ class CardImage extends _AutoCard {
   }
 }
 
-customElements.define('card-text', CardText);
-customElements.define('card-image', CardImage);
+const lineRegex = /^[0-9]+x \w+$/
+const typePriority = [
+  'Land',
+  'Creature',
+  'Artifact',
+  'Enchantment',
+  'Planeswalker',
+  'Instant',
+  'Sorcery',
+].reverse()
+const typeDisplay = [
+  'Creature',
+  'Planeswalker',
+  'Artifact',
+  'Enchantment',
+  'Instant',
+  'Sorcery',
+  'Land',
+]
+
+class CardList extends HTMLElement {
+  connectedCallback() {
+    const self = this
+    // todo need true solution
+    setTimeout(() => self.todoOnLoad(), 100)
+  }
+  todoOnLoad() {
+    const self = this
+    const listSrc = this.getAttribute('src')
+    fetch(listSrc)
+      .then(res => res.text())
+      .then(text => self.renderText(text))
+  }
+  renderText(text) {
+    const self = this;
+    const cardTypes = {}
+    const promises = []
+    text.split('\n').forEach(line => {
+      const trimmed = line.trim()
+      if (trimmed.length === 0){
+        return
+      }
+      // todo use regex
+      const split = trimmed.indexOf('x ')
+      const quantity = trimmed.substring(0, split)
+      const cardName = trimmed.substring(split + 2)
+      const promise = CardAPI.getCard(cardName)
+        .then(card => {
+          if (!card){
+            console.log('failed to find card', line)
+            return
+          }
+          let cardType = null
+          typePriority.forEach(type => {
+            if (card.types.includes(type)){
+              cardType = type
+            }
+          })
+          if (cardType){
+            if (!cardTypes[cardType]){
+              cardTypes[cardType] = []
+            }
+            cardTypes[cardType].push({
+              quantity: quantity,
+              card: card,
+            })
+          }
+        })
+      promises.push(promise)
+    })
+    Promise.all(promises)
+      .then(() => {
+        self.innerHTML = ''
+        typeDisplay.forEach(type => {
+          if (!cardTypes[type]){
+            return
+          }
+          self.innerHTML += `<h3>${type}</h3>`
+          cardTypes[type].forEach(card => {
+            self.innerHTML += `<div>${card.quantity}x ${card.card.name}</div>`
+          })
+        })
+      })
+  }
+}
+
+customElements.define('card-text', CardText)
+customElements.define('card-image', CardImage)
+customElements.define('card-list', CardList)
