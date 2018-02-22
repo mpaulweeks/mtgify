@@ -15,18 +15,9 @@ const CardAPI = new (class {
     fetch(`${baseUrl}/json/Multiverse.lower.json`)
       .then(res => res.json())
       .then(lookup => self.resolveMultiverse(lookup))
-    fetch(`${baseUrl}/json/AllCards.json`)
+    fetch(`${baseUrl}/json/AllCards.lower.json`)
       .then(res => res.json())
-      .then(lookup => {
-        // todo this should be a ready file, like Multiverse
-        const lowered = {}
-        for (var key in lookup){
-          const card = lookup[key]
-          const loweredKey = self.normalizeCardName(card.name)
-          lowered[loweredKey] = card
-        }
-        self.resolveAllCards(lowered)
-      })
+      .then(lookup => self.resolveAllCards(lookup))
   }
   normalizeCardName(cardName) {
     return cardName.trim().toLowerCase()
