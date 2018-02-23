@@ -37,7 +37,20 @@ const CardAPI = new (class {
   }
 })()
 
-class _AutoCard extends HTMLElement {
+
+
+class _TextListener extends HTMLElement {
+  setupTextListener(callback) {
+    const self = this
+    const callbackWrapper = function() {
+      self._observer.disconnect();
+      callback()
+    }
+    self._observer = new MutationObserver(callbackWrapper)
+    self._observer.observe(self, { childList: true })
+  }
+}
+class _AutoCard extends _TextListener {
   connectedCallback() {
     this.name = this.getAttribute('name')
     this.innerHTML = ''
@@ -78,7 +91,7 @@ class CardImage extends _AutoCard {
   }
 }
 
-class CardList extends HTMLElement {
+class CardList extends _TextListener {
   connectedCallback() {
     const listSrc = this.getAttribute('src')
     this.renderText(listSrc)
@@ -102,3 +115,18 @@ class CardList extends HTMLElement {
 customElements.define('card-text', CardText)
 customElements.define('card-image', CardImage)
 customElements.define('card-list', CardList)
+
+class Exp extends _TextListener {
+  print() {
+    this.innerHTML += '1'
+    console.log('innerHTML', this.innerHTML)
+    console.log('innerText', this.innerText)
+    console.log('textContent', this.textContent)
+  }
+  connectedCallback() {
+    // this.print()
+    // setTimeout(() => this.print(), 1000)
+    this.setupTextListener(() => this.print())
+  }
+}
+customElements.define('card-exp', Exp)
