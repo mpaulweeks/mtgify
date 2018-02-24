@@ -4,6 +4,7 @@
   "description": "assorted tools for MTG apps",
   "main": "index.js",
   "scripts": {
+    "scrape": "node script/scrape.js",
     "ci": "jest --watch",
     "test": "jest",
     "build": "browserify lib/index.js | uglifyjs --compress --mangle --source-map --output dist/autocard.js",

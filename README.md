@@ -7,3 +7,27 @@ assorted tools for MTG apps
 # todo
 
 - option for exposing methods to browser? http://www.ryanbensonmedia.com/blog/exposing-a-module-in-browserify
+
+# nginx
+
+```
+server {
+  listen 80;
+  server_name autocard.mpaulweeks.com;
+
+  location /dist/ {
+    autoindex on;
+    alias /home/ec2-user/mtg-toolbox/dist/;
+  }
+
+  location /example/ {
+    autoindex on;
+    alias /home/ec2-user/mtg-toolbox/example/;
+  }
+
+  location /json/ {
+    autoindex on;
+    alias /home/ec2-user/mtg-toolbox/json/;
+  }
+}
+```

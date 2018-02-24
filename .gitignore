@@ -58,7 +58,7 @@ typings/
 .env
 
 # output of scraping
-scrape_out
+json/
 
 # browserify / watchify
 build/
