@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "ci": "jest --watch",
-    "test": "jest"
+    "test": "jest",
+    "build": "browserify card/index.js -o dist/bundle.js",
+    "watch": "watchify card/index.js -o build/bundle.js --debug --verbose"
   },
   "repository": {
     "type": "git",
