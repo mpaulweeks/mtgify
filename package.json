@@ -6,7 +6,7 @@
   "scripts": {
     "ci": "jest --watch",
     "test": "jest",
-    "build": "browserify lib/index.js -o build/autocard.js && uglifyjs build/autocard.js --compress --mangle --source-map --output dist/autocard.js",
+    "build": "browserify lib/index.js | uglifyjs --compress --mangle --source-map --output dist/autocard.js",
     "watch": "watchify lib/index.js -o build/autocard.js --debug --verbose"
   },
   "repository": {
