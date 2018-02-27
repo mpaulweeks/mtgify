@@ -2,3 +2,32 @@ card-text a {
   text-decoration: none;
   color: inherit;
 }
+card-text a:hover {
+  text-decoration: underline;
+}
+
+card-list {
+  text-align: left;
+  display: block;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  margin: 5px auto;
+
+  max-width: 600px;
+}
+card-list-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+card-list-category {
+  display: block;
+  padding: 5px;
+}
+card-list-category-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
