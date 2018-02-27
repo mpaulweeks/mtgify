@@ -17,6 +17,12 @@ card-list {
 
   max-width: 600px;
 }
+card-list-title {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+}
 card-list-container {
   display: flex;
   flex: 1;
