@@ -4,6 +4,7 @@
   "description": "assorted tools for MTG apps",
   "main": "index.js",
   "scripts": {
+    "deploy": "./bash/deploy.sh",
     "ci": "jest --watch",
     "test": "jest",
     "build": "browserify lib/index.js | uglifyjs --compress --mangle --source-map --output dist/autocard.js",
