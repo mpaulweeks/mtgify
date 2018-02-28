@@ -19,15 +19,18 @@ server {
     autoindex on;
     alias /home/ec2-user/mtg-toolbox/dist/;
   }
+  location /json/ {
+    autoindex on;
+    alias /home/ec2-user/mtg-toolbox/json/;
+  }
 
   location /example/ {
     autoindex on;
     alias /home/ec2-user/mtg-toolbox/example/;
   }
-
-  location /json/ {
+  location /test/ {
     autoindex on;
-    alias /home/ec2-user/mtg-toolbox/json/;
+    alias /home/ec2-user/mtg-toolbox/test/;
   }
 }
 ```
