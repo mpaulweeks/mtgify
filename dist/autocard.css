@@ -29,6 +29,13 @@ card-list-container {
   flex-direction: row;
   flex-wrap: wrap;
 }
+card-list-image {
+  display: block;
+  width: 150px;
+}
+card-list-image img {
+  max-width: 100%;
+}
 card-list-category {
   display: block;
   padding: 5px;
