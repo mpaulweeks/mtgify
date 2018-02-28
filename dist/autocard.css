@@ -1,3 +1,19 @@
+card-text,
+card-list,
+card-title,
+card-image,
+card-list-preview,
+card-list-category,
+card-list-category-title {
+  display: block;
+}
+
+card-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 card-text a {
   text-decoration: none;
   color: inherit;
@@ -8,7 +24,6 @@ card-text a:hover {
 
 card-list {
   text-align: left;
-  display: block;
 
   border-style: solid;
   border-width: 2px;
@@ -18,26 +33,17 @@ card-list {
   max-width: 600px;
 }
 card-list-title {
-  display: block;
   text-align: center;
   font-size: 20px;
   padding: 5px;
 }
-card-list-container {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-card-list-image {
-  display: block;
+card-list-preview {
   width: 150px;
 }
-card-list-image img {
+card-list-preview img {
   max-width: 100%;
 }
 card-list-category {
-  display: block;
   padding: 5px;
 }
 card-list-category-title {
