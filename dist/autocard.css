@@ -29,7 +29,11 @@ card-list-title {
   padding: 5px;
 }
 card-list-preview {
-  width: 150px;
+  --width: 200px;
+  width: var(--width);
+  height: calc(var(--width)*310/223);
+  background-image: url('http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=0&type=card');
+  background-size: 100% 100%;
 }
 card-list-preview img {
   max-width: 100%;
