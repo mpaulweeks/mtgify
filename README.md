@@ -18,30 +18,3 @@ Make tags either in HTML or via JS
 <card-image>Bitter Blossom</card-image>
 ```
 See the [example folder](/docs/example) for more
-
-# nginx
-
-```
-server {
-  listen 80;
-  server_name autocard.mpaulweeks.com;
-
-  location /dist/ {
-    autoindex on;
-    alias /home/ec2-user/mtg-toolbox/dist/;
-  }
-  location /json/ {
-    autoindex on;
-    alias /home/ec2-user/mtg-toolbox/json/;
-  }
-
-  location /example/ {
-    autoindex on;
-    alias /home/ec2-user/mtg-toolbox/example/;
-  }
-  location /test/ {
-    autoindex on;
-    alias /home/ec2-user/mtg-toolbox/test/;
-  }
-}
-```
