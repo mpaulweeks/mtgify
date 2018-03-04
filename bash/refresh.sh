@@ -1,4 +1,6 @@
 #!/bin/sh
+export PATH=$PATH:/home/ec2-user/.nvm/versions/node/v8.9.1/bin/
 
-/home/ec2-user/.nvm/versions/node/v8.9.1/bin/node script/scrape.js
-/home/ec2-user/.nvm/versions/node/v8.9.1/bin/node script/gen-json.js
+node script/scrape.js
+node script/gen-json.js
+yarn build

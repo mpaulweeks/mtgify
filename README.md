@@ -4,10 +4,6 @@
 
 assorted tools for MTG apps
 
-# todo
-
-- remove dist from git, make build part of cronjob
-
 # nginx
 
 ```

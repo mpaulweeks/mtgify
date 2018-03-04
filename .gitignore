@@ -61,4 +61,6 @@ typings/
 json/
 
 # browserify / watchify
+dist/autocard.js
+dist/autocard.js.map
 build/
