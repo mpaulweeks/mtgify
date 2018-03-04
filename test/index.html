@@ -11,9 +11,11 @@
   </style>
 
   <script>
-    AUTOCARD_API = window.location.href + '/../../'
-    AUTOCARD_TEST = false
-    AUTOCARD_MCI_IMAGES = true
+    AUTOCARD_CONFIG = {
+      apiUrl: window.location.href + '/../../',
+      isTest: true,
+      useMci: false,
+    }
   </script>
   <script src="../build/autocard.js"></script>
 </head>
