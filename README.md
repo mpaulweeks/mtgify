@@ -6,7 +6,7 @@ assorted tools for MTG apps
 
 # todo
 
-- option for exposing methods to browser? http://www.ryanbensonmedia.com/blog/exposing-a-module-in-browserify
+- remove dist from git, make build part of cronjob
 
 # nginx
 
