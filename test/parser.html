@@ -1,0 +1,31 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>⚠️ TEST PAGE - Parser ⚠️</title>
+  <link rel="icon" type="image/icon" href="../docs/favicon.png">
+
+  <link rel="stylesheet" href="../dist/autocard.css" />
+  <style>
+    p card-text {
+      display: block;
+    }
+  </style>
+
+  <script>
+    AUTOCARD_CONFIG = {
+      parser: true,
+      parseCaseInsensitive: false,
+    }
+  </script>
+  <script src="../build/parser.js"></script>
+</head>
+<body>
+  <div>
+    Example text with a Fog card inside
+  </div>
+  <div>
+    Example test where fog has incorrect capitalization
+  </div>
+  <div>
+    A nested example using a <span style="color: blue;">span around Fog</span>
+  </div>
+</body>
