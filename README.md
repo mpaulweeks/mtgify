@@ -18,3 +18,10 @@ Make tags either in HTML or via JS
 <auto-card-image>Umezawa's Jitte</auto-card-image>
 ```
 See the [example folder](/docs/example) for more
+
+## todo
+
+- page to generate bookmark snippets
+```
+javascript:(function(){window.AUTOCARD_CONFIG={enableAutoTag:true};document.body.appendChild(document.createElement('script')).src='http://autocard.mpaulweeks.com/dist/autocard.js';})();
+```
