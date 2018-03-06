@@ -4,7 +4,7 @@
 
 assorted tools for MTG apps
 
-## \<card-text> usage
+## \<auto-card> usage
 
 Import the stylesheet and script in your document's head
 ```html
@@ -13,8 +13,8 @@ Import the stylesheet and script in your document's head
 ```
 Make tags either in HTML or via JS
 ```html
-<card-text>Dark Confidant</card-text>
-<card-text name="Dark Confidant">Bob</card-text>
-<card-image>Umezawa's Jitte</card-image>
+<auto-card>Dark Confidant</auto-card>
+<auto-card name="Dark Confidant">Bob</auto-card>
+<auto-card-image>Umezawa's Jitte</auto-card-image>
 ```
 See the [example folder](/docs/example) for more

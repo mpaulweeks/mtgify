@@ -1,19 +1,19 @@
-card-list,
-card-list-title,
-card-list-preview,
-card-list-category,
-card-list-category * {
+auto-card-list,
+auto-card-list-title,
+auto-card-list-preview,
+auto-card-list-category,
+auto-card-list-category * {
   display: block;
 }
 
-card-list-container {
+auto-card-list-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 
-card-list {
+auto-card-list {
   text-align: left;
 
   border-style: solid;
@@ -23,32 +23,32 @@ card-list {
 
   max-width: 600px;
 }
-card-list-title {
+auto-card-list-title {
   text-align: center;
   font-size: 20px;
   padding: 5px;
 }
-card-list-preview {
+auto-card-list-preview {
   --width: 200px;
   width: var(--width);
   height: calc(var(--width)*310/223);
   background-image: url('http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=0&type=card');
   background-size: 100% 100%;
 }
-card-list-preview img {
+auto-card-list-preview img {
   max-width: 100%;
 }
-card-list-category {
+auto-card-list-category {
   padding: 5px;
 }
-card-list-category-title {
+auto-card-list-category-title {
   font-weight: bold;
   text-decoration: underline;
 }
-card-list card-text a {
+auto-card-list auto-card a {
   text-decoration: none;
   color: inherit;
 }
-card-list card-text a:hover {
+auto-card-list auto-card a:hover {
   text-decoration: underline;
 }
