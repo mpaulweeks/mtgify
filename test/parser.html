@@ -12,8 +12,9 @@
 
   <script>
     AUTOCARD_CONFIG = {
+      apiUrl: window.location.href + '/../../',
+      isTest: true,
       useParser: true,
-      parseCaseInsensitive: false,
     }
   </script>
   <script src="../build/autocard.js"></script>
@@ -33,4 +34,6 @@
   </div>
   <div no-autocard>
     Example where parser is disabled, despite Fog showing up in text
+  </div>
+  Example where Fog is in the last node in the body
 </body>
