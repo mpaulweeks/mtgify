@@ -8,8 +8,8 @@ assorted tools for MTG apps
 
 Import the stylesheet and script in your document's head
 ```html
-<link rel="stylesheet" href="http://autocard.mpaulweeks.com/dist/autocard.css">
-<script src="http://autocard.mpaulweeks.com/dist/autocard.js"></script>
+<link rel="stylesheet" href="https://autocard.mpaulweeks.com/dist/autocard.css">
+<script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
 ```
 Make tags either in HTML or via JS
 ```html
@@ -23,5 +23,5 @@ See the [example folder](/docs/example) for more
 
 - page to generate bookmark snippets
 ```
-javascript:(function(){window.AUTOCARD_CONFIG={enableAutoTag:true};document.body.appendChild(document.createElement('script')).src='http://autocard.mpaulweeks.com/dist/autocard.js';})();
+javascript:(function(){window.AUTOCARD_CONFIG={enableAutoTag:true};document.body.appendChild(document.createElement('script')).src='https://autocard.mpaulweeks.com/dist/autocard.js';})();
 ```
