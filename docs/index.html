@@ -1,0 +1,81 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>AutoCard</title>
+  <link rel="icon" type="image/icon" href="favicon.png">
+
+  <link rel="stylesheet" href="https://autocard.mpaulweeks.com/dist/autocard.css" />
+  <script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
+
+  <link rel="stylesheet" href="prism.css" />
+  <script src="prism.js"></script>
+
+  <link rel="stylesheet" href="home.css" />
+  <script src="home.js" defer></script>
+</head>
+<body>
+  <div class="section hero">
+    <div class="container">
+      <div class="title">
+        &lt;MTG/&gt;
+      </div>
+      <div class="subtitle">
+        javascript tools for rendering magic cards
+      </div>
+    </div>
+  </div>
+
+  <div class="section snippet">
+    <div class="container">
+      <div class="header">
+        Create a bookmark to autocard any website
+      </div>
+      <div>
+        <label for="imgSource"> Image source: </label>
+        <select id="imgSource">
+          <option value="gatherer" selected="selected">Gatherer</option>
+          <option value="magicCardsInfo">magiccards.info</option>
+          <option value="scryfall">scryfall.com</option>
+        </select>
+      </div>
+      <div>
+        <label for="linkSource"> Cards link to: </label>
+        <select id="linkSource">
+          <option value="gatherer" selected="selected">Gatherer</option>
+          <option value="combodeck">combodeck.net</option>
+          <option value="magicCardsInfo">magiccards.info</option>
+          <option value="scryfall">scryfall.com</option>
+        </select>
+      </div>
+      <div>
+        Example: <span id="snippetExample"></span>
+      </div>
+      <div>
+        Drag this button into your bookmarks toolbar:
+        <a id="snippetLink" href=""><button>AutoCard!</button></a>
+      </div>
+      <div>
+        That's it! Then go to any page and click the bookmark.
+        <br/>
+        For example, <a href="http://edhsource.com/?p=45">this article on competitive EDH theory</a>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Drag this link to make bookmark autocard:
+    <a href="javascript:(function(){window.AUTOCARD_CONFIG={enableAutoTag:true};document.body.appendChild(document.createElement('script')).src='https://autocard.mpaulweeks.com/dist/autocard.js';})();">snippet</a>
+  </p>
+  <p>
+    Card as link with hover: <auto-card>Dark Confidant</auto-card>
+  </p>
+  <p>
+    Card as link with hover + custom name: <auto-card name="Dark Confidant">Bob</auto-card>
+  </p>
+  <p>
+    Card as inlined image:
+    <div>
+      <auto-card-image>Umezawa's Jitte</auto-card-image>
+    </div>
+  </p>
+  <auto-card-list src="https://autocard.mpaulweeks.com/test/sample_deck.txt"></auto-card-list>
+</body>

@@ -1,0 +1,55 @@
+
+html, body {
+  margin: 0;
+}
+body {
+  text-align: center;
+  --normal-font-size: 16px;
+  --larger-font-size: 18px;
+  font-size: var(--normal-font-size);
+}
+
+.section {
+  padding: 20px;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.hero {
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: rgb(39,40,34);
+  color: #ffffff;
+}
+.title {
+  font-size: 80px;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+.subtitle {
+  font-size: 20px;
+}
+
+.snippet {
+  background-color: lightblue;
+}
+.snippet div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#snippetLink button {
+  font-size: var(--larger-font-size);
+}
+
+.snippet select {
+  font-size: var(--larger-font-size);
+}
