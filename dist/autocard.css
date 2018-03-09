@@ -31,6 +31,12 @@ auto-card-list-preview img {
 }
 auto-card-list-category {
   padding: 5px;
+
+  /* https://stackoverflow.com/a/7785711/6461842 */
+  -webkit-column-break-inside: avoid; /* Chrome, Safari */
+  page-break-inside: avoid;           /* Theoretically FF 20+ */
+  break-inside: avoid-column;         /* IE 11 */
+  display:table;
 }
 auto-card-list-category-title {
   font-style: italic;
