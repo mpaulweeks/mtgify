@@ -1,6 +1,8 @@
 
 html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
 }
 body {
   text-align: center;
@@ -12,8 +14,11 @@ body {
 .section {
   padding: 20px;
 }
+.section pre {
+  margin: 8px auto;
+}
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .header {
@@ -39,17 +44,32 @@ body {
   font-size: 20px;
 }
 
-.snippet {
-  background-color: lightblue;
+.library div {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+.library .example {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.library .instructions {
+  text-align: left;
+}
+.library .example-rendered {
+  text-align: center;
+  background-color: #f5f2f0;
+}
+
 .snippet div {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#snippetLink button {
+.snippet select {
   font-size: var(--larger-font-size);
 }
-
-.snippet select {
+#snippetExample {
+  padding: 5px;
+}
+#snippetLink button {
   font-size: var(--larger-font-size);
 }

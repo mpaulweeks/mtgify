@@ -1,6 +1,7 @@
 
 const config = {
   enableAutoTag: true,
+  excludeUnsets: true,
 };
 const AC = window.AUTOCARD
 let cardName = ''

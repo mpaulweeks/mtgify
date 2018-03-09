@@ -8,7 +8,7 @@
   <script src="../build/autocard.js"></script>
 
   <link rel="stylesheet" href="prism.css" />
-  <script src="prism.js"></script>
+  <script src="prism.js" defer></script>
 
   <link rel="stylesheet" href="home.css" />
   <script src="home.js" defer></script>
@@ -28,7 +28,7 @@
   <div class="section snippet">
     <div class="container">
       <div class="header">
-        Create a bookmark to autocard any website
+        Create a bookmark to have autocard any website
       </div>
       <div>
         <label for="imgSource"> Image source: </label>
@@ -49,8 +49,7 @@
       </div>
       <div>
         Example:
-        <span id="snippetExample"></span>
-        <br/>
+        <div id="snippetExample"></div>
         <button id="random">random card</button>
       </div>
       <div>
@@ -58,28 +57,131 @@
         <a id="snippetLink" href=""><button>AutoCard!</button></a>
       </div>
       <div>
-        That's it! Then go to any page and click the bookmark.
-        <br/>
-        For example, <a href="http://edhsource.com/?p=45">this article on competitive EDH theory</a>
+        That's it! Then go to any page and click the bookmark. For example, <a href="http://edhsource.com/?p=45">this article on competitive EDH theory</a>
       </div>
     </div>
   </div>
 
-  <p>
-    Drag this link to make bookmark autocard:
-    <a href="javascript:(function(){window.AUTOCARD_CONFIG={enableAutoTag:true};document.body.appendChild(document.createElement('script')).src='https://autocard.mpaulweeks.com/dist/autocard.js';})();">snippet</a>
-  </p>
-  <p>
-    Card as link with hover: <auto-card>Dark Confidant</auto-card>
-  </p>
-  <p>
-    Card as link with hover + custom name: <auto-card name="Dark Confidant">Bob</auto-card>
-  </p>
-  <p>
-    Card as inlined image:
-    <div>
-      <auto-card-image>Umezawa's Jitte</auto-card-image>
+
+  <div class="section library">
+    <div class="container">
+      <div class="header">
+        Easily display Magic cards on your own website
+      </div>
+      <div class="instructions">
+        Import these two files at the top of your HTML document
+      </div>
+      <pre class="language-markup"><code><!--
+        <head>
+          <link rel="stylesheet" href="https://autocard.mpaulweeks.com/dist/autocard.css" />
+          <script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
+        </head>
+      --></code></pre>
+
+      <div class="example-block">
+        <div class="instructions">
+          Create a card link
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card>Utter End</auto-card>
+        </script>
+        <div class="example-rendered">
+          <auto-card>Utter End</auto-card>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="instructions">
+          Create a card link with a custom name
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card name="Delver of Secrets">Delver</auto-card>
+        </script>
+        <div class="example-rendered">
+          <auto-card name="Delver of Secrets">Delver</auto-card>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="instructions">
+          Create a card link that leads to a different site
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card linkSource="comboDeck">Path to Exile</auto-card>
+        </script>
+        <div class="example-rendered">
+          <auto-card linkSource="comboDeck">Path to Exile</auto-card>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="instructions">
+          Create an inline card image
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card-image>Caustic Caterpillar</auto-card-image>
+        </script>
+        <div class="example-rendered">
+          <auto-card-image>Caustic Caterpillar</auto-card-image>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="instructions">
+          Create an inline card image with different image source
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card-image imgSource="magicCardsInfo">Lava Axe</auto-card-image>
+        </script>
+        <div class="example-rendered">
+          <auto-card-image imgSource="magicCardsInfo">Lava Axe</auto-card-image>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="instructions">
+          Create an decklist
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card-list name="Example Deck" src="https://autocard.mpaulweeks.com/test/sample_deck.txt"></auto-card-list>
+        </script>
+        <div class="example-rendered">
+          <auto-card-list name="Example Deck" src="https://autocard.mpaulweeks.com/test/sample_deck.txt"></auto-card-list>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="instructions">
+          Set configuration for the page by defining AUTOCARD_CONFIG before the script tag:
+        </div>
+        <pre class="language-markup"><code><!--
+          <script>
+            AUTOCARD_CONFIG = {
+              linkSource: "scryfall",
+              imgSource: "scryfall",
+            }
+          </script>
+          <script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
+        --></code></pre>
+        <div class="instructions">
+          These are the variables and their default values:
+        </div>
+        <script type="text/plain" class="language-javascript">
+          // these settings are applied when reading the cards
+          ignoreCase: true,
+          trimWhitespace: true,
+          excludeUnsets: false,
+
+          // set as true run autotag on your page during initial load
+          enableAutoTag: false,
+
+          // options: gatherer, magicCardsInfo, scryfall, comboDeck (link only)
+          imgSource: "gatherer",
+          linkSource: "gatherer",
+        </script>
+      </div>
+
     </div>
-  </p>
-  <auto-card-list src="https://autocard.mpaulweeks.com/test/sample_deck.txt"></auto-card-list>
+  </div>
+
 </body>
