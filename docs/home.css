@@ -12,7 +12,7 @@ body {
 }
 
 .section {
-  padding: 20px;
+  padding: 10px;
 }
 .section pre {
   margin: 8px auto;
@@ -23,7 +23,13 @@ body {
 }
 .header {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid black;
+}
+.footer {
+  font-size: 12px;
+  color: #505050;
+  border-top: 1px solid #909090;
 }
 
 .hero {
@@ -35,6 +41,12 @@ body {
 
   background-color: rgb(39,40,34);
   color: #ffffff;
+}
+.info {
+  font-size: 14px;
+}
+.info a {
+  color: #91D2FA;
 }
 .title {
   font-size: 80px;
@@ -48,11 +60,13 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.library .example {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.library .example-block {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .library .instructions {
+  font-size: var(--larger-font-size);
+  font-weight: bold;
   text-align: left;
 }
 .library .example-rendered {

@@ -7,21 +7,12 @@ auto-card-list-category * {
 }
 
 auto-card-list-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: block;
+  column-count: 3;
+  padding: 5px;
 }
-
-
 auto-card-list {
   text-align: left;
-
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  margin: 5px auto;
-
-  max-width: 600px;
 }
 auto-card-list-title {
   text-align: center;
@@ -42,8 +33,8 @@ auto-card-list-category {
   padding: 5px;
 }
 auto-card-list-category-title {
+  font-style: italic;
   font-weight: bold;
-  text-decoration: underline;
 }
 auto-card-list auto-card a {
   text-decoration: none;
