@@ -13,6 +13,7 @@ const snippetExmaple = document.getElementById('snippetExample');
 const snippetLink = document.getElementById('snippetLink');
 const jsonUpdated = document.getElementById('jsonUpdated');
 const jsonVersion = document.getElementById('jsonVersion');
+const updatedElms = Array.from(document.getElementsByClassName('updated'));
 
 function getSourceOption(sourceName) {
   return `<option value=${sourceName}>${AC.constants.displayName[sourceName]}</option>`
@@ -20,19 +21,23 @@ function getSourceOption(sourceName) {
 imgSource.innerHTML = AC.constants.imgSources.map(getSourceOption).join('')
 linkSource.innerHTML = AC.constants.linkSources.map(getSourceOption).join('')
 
-function renderCard(){
+function renderCard(newCard){
   snippetExample.innerHTML = 'loading...';
-  setTimeout(() => {
-    if (cardName === ''){
-      AC.getRandomCard(config).then(card => {
-        cardName = card.name;
-        renderCard();
-      })
-    } else {
-      snippetExample.innerHTML = cardName;
-      AC.tagElement(snippetExample, config);
+  if (cardName === ''){
+    AC.getRandomCard(config).then(card => {
+      cardName = card.name;
+      renderCard(true);
+    })
+  } else {
+    snippetExample.innerHTML = cardName;
+    AC.tagElement(snippetExample, config);
+    if (!newCard){
+      updatedElms.forEach(elm => elm.classList.remove('updated-fade-out'));
+      setTimeout(() => {
+        updatedElms.forEach(elm => elm.classList.add('updated-fade-out'));
+      }, 1000);
     }
-  }, 200);
+  }
 }
 function renderSnippet(){
   config.imgSource = imgSource.value;

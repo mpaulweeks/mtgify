@@ -35,6 +35,18 @@ body {
   color: #505050;
   border-top: 1px solid #909090;
 }
+.updated {
+  color: green;
+
+  opacity: 1;
+}
+.updated::after {
+  content: "updated!";
+}
+.updated-fade-out {
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
 
 .hero {
   height: 150px;
