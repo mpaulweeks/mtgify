@@ -2,7 +2,8 @@ auto-card-list,
 auto-card-list-title,
 auto-card-list-preview,
 auto-card-list-category,
-auto-card-list-category * {
+auto-card-list-category-title,
+auto-card-list-category auto-card {
   display: block;
 }
 
@@ -31,12 +32,17 @@ auto-card-list-preview img {
 }
 auto-card-list-category {
   padding: 5px;
-
+}
+auto-card-list-preview,
+auto-card-list-category {
   /* https://stackoverflow.com/a/7785711/6461842 */
   -webkit-column-break-inside: avoid; /* Chrome, Safari */
   page-break-inside: avoid;           /* Theoretically FF 20+ */
   break-inside: avoid-column;         /* IE 11 */
   display:table;
+}
+auto-card-list-category auto-card-image img {
+  width: 100px;
 }
 auto-card-list-category-title {
   font-style: italic;

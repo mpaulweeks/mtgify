@@ -13,7 +13,7 @@
   <script>
     AUTOCARD_CONFIG = {
       apiUrl: window.location.href + '/../../',
-      isTest: true,
+      // isTest: true,
     }
   </script>
   <script src="../build/autocard.js"></script>
@@ -32,6 +32,12 @@
     <auto-card-image name="Force of Will" imgScryfall></auto-card-image>
   </p>
   <auto-card-list name="Example Deck" collapse src="../test/sample_deck.txt"></auto-card-list>
-  <auto-card-list preview src="../test/sample_deck.txt"></auto-card-list>
   <auto-card-list src="../test/sample_deck.txt"></auto-card-list>
+  <auto-card-list preview src="../test/sample_deck.txt"></auto-card-list>
+  <auto-card-list preview src="../test/sample_deck.txt" imgSource="magicCardsInfo" linkSource="magicCardsInfo"></auto-card-list>
+  <auto-card-list preview src="../test/sample_deck.txt" imgSource="scryfall" linkSource="scryfall"></auto-card-list>
+  <auto-card-list preview src="../test/sample_deck.txt" imgSource="urzaCo" linkSource="urzaCo"></auto-card-list>
+  <auto-card-list showImages src="../test/sample_deck.txt" imgSource="magicCardsInfo" linkSource="magicCardsInfo"></auto-card-list>
+  <auto-card-list showImages src="../test/sample_deck.txt" imgSource="scryfall" linkSource="scryfall"></auto-card-list>
+  <auto-card-list showImages src="../test/sample_deck.txt" imgSource="urzaCo" linkSource="urzaCo"></auto-card-list>
 </body>
