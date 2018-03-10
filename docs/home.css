@@ -17,7 +17,13 @@ body {
 .section pre {
   margin: 8px auto;
 }
+.row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -42,12 +48,6 @@ body {
   background-color: rgb(39,40,34);
   color: #ffffff;
 }
-.info {
-  font-size: 14px;
-}
-.info a {
-  color: #91D2FA;
-}
 .title {
   font-size: 80px;
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
@@ -56,10 +56,15 @@ body {
   font-size: 20px;
 }
 
-.library div {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
 }
+.navbar div {
+  width: 200px;
+  margin: 0px auto;
+}
+
 .library .example-block {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -74,10 +79,6 @@ body {
   background-color: #f5f2f0;
 }
 
-.snippet div {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 .snippet select {
   font-size: var(--larger-font-size);
 }

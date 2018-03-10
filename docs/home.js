@@ -11,6 +11,8 @@ const linkSource = document.getElementById('linkSource');
 const randomButton = document.getElementById('random');
 const snippetExmaple = document.getElementById('snippetExample');
 const snippetLink = document.getElementById('snippetLink');
+const jsonUpdated = document.getElementById('jsonUpdated');
+const jsonVersion = document.getElementById('jsonVersion');
 
 function getSourceOption(sourceName) {
   return `<option value=${sourceName}>${AC.constants.displayName[sourceName]}</option>`
@@ -44,3 +46,10 @@ randomButton.addEventListener('click', () => {
   renderCard();
 })
 renderSnippet();
+
+fetch('https://autocard.mpaulweeks.com/json/version.json')
+  .then(resp => resp.json())
+  .then(vData => {
+    jsonUpdated.innerHTML = vData.updated.substring(0, 10);
+    jsonVersion.innerHTML = vData.version;
+  })

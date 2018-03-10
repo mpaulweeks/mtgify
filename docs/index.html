@@ -3,8 +3,10 @@
   <title>AutoCard</title>
   <link rel="icon" type="image/icon" href="favicon.png">
 
-  <link rel="stylesheet" href="https://autocard.mpaulweeks.com/dist/autocard.css" />
-  <script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
+  <!--<link rel="stylesheet" href="https://autocard.mpaulweeks.com/dist/autocard.css" />-->
+  <!--<script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>-->
+  <link rel="stylesheet" href="../dist/autocard.css" />
+  <script src="../build/autocard.js"></script>
 
   <link rel="stylesheet" href="prism.css" />
   <script src="prism.js" defer></script>
@@ -28,18 +30,31 @@
       <div class="subtitle">
         javascript tools for rendering Magic cards
       </div>
-      <div class="info">
-        developed by <a href="https://twitter.com/mpaulweeks">@mpaulweeks</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row navbar">
+        <div>
+          <a href="#snippet">autocard anywhere</a>
+        </div>
+        <div>
+          <a href="#library">autocard on your page</a>
+        </div>
+        <div>
+          <a href="#about">about</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="section snippet">
+  <div class="section snippet" name="snippet">
     <div class="container">
-      <div class="header">
+      <div class="row header">
         Create a bookmark to have autocard any website
       </div>
-      <div>
+      <div class="row">
         <label for="linkSource"> Cards link to: </label>
         <select id="linkSource">
           <option value="gatherer" selected="selected">Gatherer</option>
@@ -48,7 +63,7 @@
           <option value="scryfall">scryfall.com</option>
         </select>
       </div>
-      <div>
+      <div class="row">
         <label for="imgSource"> Image source: </label>
         <select id="imgSource">
           <option value="gatherer" selected="selected">Gatherer</option>
@@ -56,25 +71,25 @@
           <option value="scryfall">scryfall.com</option>
         </select>
       </div>
-      <div>
+      <div class="row">
         Example:
         <div id="snippetExample"></div>
         <button id="random">random card</button>
       </div>
-      <div>
+      <div class="row">
         Drag this button into your bookmarks toolbar:
         <a id="snippetLink" href=""><button>AutoCard!</button></a>
       </div>
-      <div>
+      <div class="row">
         That's it! Then go to any page and click the bookmark. For example, <a href="http://edhsource.com/?p=45">this article on competitive EDH theory</a>
       </div>
     </div>
   </div>
 
 
-  <div class="section library">
+  <div class="section library" name="library">
     <div class="container">
-      <div class="header">
+      <div class="row header">
         Easily display Magic cards on your own website
       </div>
 
@@ -198,6 +213,34 @@
         </script>
       </div>
 
+    </div>
+  </div>
+
+  <div class="section" name="about">
+    <div class="container">
+      <div class="row header">
+        About
+      </div>
+      <div class="row">
+        <div>
+          developed by <a href="https://twitter.com/mpaulweeks">@mpaulweeks</a>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <i>Code last updated</i>
+          <span>2018-03-08</span>
+        </div>
+        <div>
+          <i>Card data last updated</i>
+          <span id="jsonUpdated">loading...</span>
+        </div>
+        <div>
+          <i>Using MTG JSON v</i>
+          <span id="jsonVersion">loading...</span>
+          (<a href="https://mtgjson.com/changelog.html">changelog</a>)
+        </div>
+      </div>
     </div>
   </div>
 
