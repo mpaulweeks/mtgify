@@ -21,16 +21,18 @@ imgSource.innerHTML = AC.constants.imgSources.map(getSourceOption).join('')
 linkSource.innerHTML = AC.constants.linkSources.map(getSourceOption).join('')
 
 function renderCard(){
-  if (cardName === ''){
-    snippetExample.innerHTML = 'loading...';
-    AC.getRandomCard(config).then(card => {
-      cardName = card.name;
-      renderCard();
-    })
-  } else {
-    snippetExample.innerHTML = cardName;
-    AC.tagElement(snippetExample, config);
-  }
+  snippetExample.innerHTML = 'loading...';
+  setTimeout(() => {
+    if (cardName === ''){
+      AC.getRandomCard(config).then(card => {
+        cardName = card.name;
+        renderCard();
+      })
+    } else {
+      snippetExample.innerHTML = cardName;
+      AC.tagElement(snippetExample, config);
+    }
+  }, 200);
 }
 function renderSnippet(){
   config.imgSource = imgSource.value;
