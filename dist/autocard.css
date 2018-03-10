@@ -2,7 +2,8 @@ auto-card-list,
 auto-card-list-title,
 auto-card-list-preview,
 auto-card-list-category,
-auto-card-list-category * {
+auto-card-list-category-title,
+auto-card-list-category auto-card {
   display: block;
 }
 
@@ -39,6 +40,9 @@ auto-card-list-category {
   page-break-inside: avoid;           /* Theoretically FF 20+ */
   break-inside: avoid-column;         /* IE 11 */
   display:table;
+}
+auto-card-list-category auto-card-image img {
+  width: 100px;
 }
 auto-card-list-category-title {
   font-style: italic;
