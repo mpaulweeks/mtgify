@@ -36,15 +36,10 @@
   <div class="section">
     <div class="container">
       <div class="row navbar">
-        <div>
-          <a href="#snippet">autocard anywhere</a>
-        </div>
-        <div>
-          <a href="#library">autocard on your page</a>
-        </div>
-        <div>
-          <a href="#about">about</a>
-        </div>
+        <div><a href="#snippet">autocard bookmark</a></div>
+        <div><a href="#library">autocard on your page</a></div>
+        <div><a href="#config">configuration</a></div>
+        <div><a href="#about">about</a></div>
       </div>
     </div>
   </div>
@@ -154,18 +149,6 @@
 
       <div class="row example-block">
         <div class="instructions">
-          Create a card link that leads to a different site
-        </div>
-        <script type="text/plain" class="language-markup">
-          <auto-card linkSource="comboDeck">Path to Exile</auto-card>
-        </script>
-        <div class="example-rendered">
-          <auto-card linkSource="comboDeck">Path to Exile</auto-card>
-        </div>
-      </div>
-
-      <div class="row example-block">
-        <div class="instructions">
           Create an inline card image
         </div>
         <script type="text/plain" class="language-markup">
@@ -173,18 +156,6 @@
         </script>
         <div class="example-rendered">
           <auto-card-image>Caustic Caterpillar</auto-card-image>
-        </div>
-      </div>
-
-      <div class="row example-block">
-        <div class="instructions">
-          Create an inline card image with different image source
-        </div>
-        <script type="text/plain" class="language-markup">
-          <auto-card-image imgSource="magicCardsInfo">Lava Axe</auto-card-image>
-        </script>
-        <div class="example-rendered">
-          <auto-card-image imgSource="magicCardsInfo">Lava Axe</auto-card-image>
         </div>
       </div>
 
@@ -199,8 +170,34 @@
           <auto-card-list name="SAM BLACK'S LANTERN CONTROL" src="lantern_control.dec"></auto-card-list>
         </div>
       </div>
+  </div>
 
-      <div class="row example-block">
+  <div class="section">
+    <a name="config"></a>
+    <div class="container">
+      <div class="row header">
+        Custom Configuration and API
+      </div>
+
+      <div class="row">
+        <div class="instructions">
+          Concerning AutoTagging
+        </div>
+        <div>
+          <ul>
+            <li>
+              AutoTagging starts with an element (document.body or otherwise specified) and recursively tags all children
+            </li>
+            <li>
+              AutoTagging ignores tags that start with <b>auto-card</b>
+            </li>
+            <li>
+              AutoTagging ignores tags with the attribute <b>auto-card-off</b>
+            </li>
+          </ul>
+      </div>
+
+      <div class="row">
         <div class="instructions">
           Set configuration for the page by defining AUTOCARD_CONFIG before the script tag
         </div>
@@ -213,24 +210,64 @@
           </script>
           <script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
         --></code></pre>
+      </div>
+
+      <div class="row">
         <div class="instructions">
-          These are the variables and their default values
+          These are the settings and their default values
         </div>
         <script type="text/plain" class="language-javascript">
-          // these settings are applied when reading the cards
+          // set as true to run autotag on your page during page load
+          enableAutoTag: false,
+
+          // these settings are applied when trying to read card names
           ignoreCase: true,
           trimWhitespace: true,
           excludeUnsets: false,
 
-          // set as true run autotag on your page during initial load
-          enableAutoTag: false,
-
-          // options: gatherer, magicCardsInfo, scryfall, comboDeck (link only)
+          // options: gatherer, magicCardsInfo, scryfall, urzaCo, comboDeck (link only)
           linkSource: "gatherer",
           imgSource: "gatherer",
         </script>
       </div>
 
+      <div class="row">
+        <div class="instructions">
+          You can use many of the settings as attributes on any of the card tags
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card imgSource="magicCardsInfo" linkSource="comboDeck">Path to Exile</auto-card>
+        </script>
+        <div class="example-rendered">
+          <auto-card imgSource="magicCardsInfo" linkSource="comboDeck">Path to Exile</auto-card>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="instructions">
+          Including the script defines the global variable AUTOCARD
+        </div>
+
+        <script type="text/plain" class="language-javascript">
+          // search entire document for card names and create auto-cards
+          // you get the same affect on page load by setting "enableAutoTag: false"
+          // config is optional, if present will override global config
+          AUTOCARD.tagBody(config);
+
+          // search an element for card names and create auto-cards
+          // useful if you're dynamically generating HTML with Javascript
+          // config is optional, if present will override global config
+          const elm = document.getElementById('new-thing');
+          AUTOCARD.tagElement(elm, config);
+
+          // returns a promise with a new random card
+          // config is optional, if present will override global config
+          AUTOCARD.getRandomCard(config)
+            .then(card => {
+              console.log(card);
+            })
+        </script>
+      </div>
     </div>
   </div>
 
@@ -248,8 +285,10 @@
       <div class="row">
         <div>
           <i>Code last updated</i>
-          <span>2018-03-08</span>
+          <span>2018-03-10</span>
         </div>
+      </div>
+      <div class="row">
         <div>
           <i>Card data last updated</i>
           <span id="jsonUpdated">loading...</span>

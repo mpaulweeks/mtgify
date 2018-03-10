@@ -10,6 +10,9 @@ body {
   --larger-font-size: 18px;
   font-size: var(--normal-font-size);
 }
+li {
+  text-align: left;
+}
 
 .section {
   padding: 10px;
@@ -75,10 +78,6 @@ body {
   margin: 0px auto;
 }
 
-.library .example-block {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
 .instructions {
   padding-top: 10px;
   padding-bottom: 10px;
