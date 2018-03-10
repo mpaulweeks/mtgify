@@ -22,8 +22,6 @@ body {
   padding-bottom: 10px;
 }
 .container {
-  padding-top: 10px;
-  padding-bottom: 10px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -70,11 +68,15 @@ body {
   padding-bottom: 30px;
 }
 .library .instructions {
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: var(--larger-font-size);
   font-weight: bold;
   text-align: left;
 }
 .library .example-rendered {
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   background-color: #f5f2f0;
 }
