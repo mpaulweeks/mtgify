@@ -67,7 +67,7 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.library .instructions {
+.instructions {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: var(--larger-font-size);
@@ -81,6 +81,9 @@ body {
   background-color: #f5f2f0;
 }
 
+.snippet {
+  text-align: left;
+}
 .snippet select {
   font-size: var(--larger-font-size);
 }

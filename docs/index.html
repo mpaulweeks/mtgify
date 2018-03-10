@@ -56,28 +56,46 @@
         Create a bookmark to have autocard any website
       </div>
       <div class="row">
-        <label for="linkSource"> Cards link to: </label>
-        <select id="linkSource">
-          <option value="gatherer" selected="selected">Gatherer</option>
-          <option value="combodeck">combodeck.net</option>
-          <option value="magicCardsInfo">magiccards.info</option>
-          <option value="scryfall">scryfall.com</option>
-        </select>
-        <label for="imgSource"> Image source: </label>
-        <select id="imgSource">
-          <option value="gatherer" selected="selected">Gatherer</option>
-          <option value="magicCardsInfo">magiccards.info</option>
-          <option value="scryfall">scryfall.com</option>
-        </select>
+        <div class="instructions">
+          Set how the links should work
+        </div>
+        <div>
+          <label for="linkSource"> Cards link to: </label>
+          <select id="linkSource">
+            <option value="gatherer" selected="selected">Gatherer</option>
+            <option value="combodeck">combodeck.net</option>
+            <option value="magicCardsInfo">magiccards.info</option>
+            <option value="scryfall">scryfall.com</option>
+          </select>
+        </div>
+        <br/>
+        <div>
+          <label for="imgSource"> Image source: </label>
+          <select id="imgSource">
+            <option value="gatherer" selected="selected">Gatherer</option>
+            <option value="magicCardsInfo">magiccards.info</option>
+            <option value="scryfall">scryfall.com</option>
+          </select>
+        </div>
       </div>
       <div class="row">
-        Example:
-        <span id="snippetExample"></span>
-        <button id="random">random card</button>
+        <div class="instructions">
+          Test it out
+          <button id="random">random card</button>
+        </div>
+        <div>
+          Example:
+          <span id="snippetExample"></span>
+        </div>
       </div>
       <div class="row">
-        Drag this button into your bookmarks toolbar:
-        <a id="snippetLink" href=""><button>AutoCard!</button></a>
+        <div class="instructions">
+          Save it as a bookmark
+        </div>
+        <div>
+          Drag this button into your bookmarks toolbar:
+          <a id="snippetLink" href=""><button>AutoCard!</button></a>
+        </div>
       </div>
       <div class="row">
         That's it! Then go to any page and click the bookmark. For example, <a href="http://edhsource.com/?p=45">this article on competitive EDH theory</a>
@@ -98,10 +116,8 @@
           Import these two files at the top of your HTML document
         </div>
         <pre class="language-markup"><code><!--
-          <head>
-            <link rel="stylesheet" href="https://autocard.mpaulweeks.com/dist/autocard.css" />
-            <script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
-          </head>
+          <link rel="stylesheet" href="https://autocard.mpaulweeks.com/dist/autocard.css" />
+          <script src="https://autocard.mpaulweeks.com/dist/autocard.js"></script>
         --></code></pre>
         <div style="text-align: left;">
           The stylesheet is not necessary, but recommended.
