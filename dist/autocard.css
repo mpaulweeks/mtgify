@@ -41,9 +41,6 @@ auto-card-list-category {
   break-inside: avoid-column;         /* IE 11 */
   display:table;
 }
-auto-card-list-category auto-card-image img {
-  width: 100px;
-}
 auto-card-list-category-title {
   font-style: italic;
   font-weight: bold;
@@ -54,4 +51,7 @@ auto-card-list auto-card a {
 }
 auto-card-list auto-card a:hover {
   text-decoration: underline;
+}
+auto-card-list-images img {
+  width: 100px;
 }
