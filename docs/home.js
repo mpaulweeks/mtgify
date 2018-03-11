@@ -54,8 +54,7 @@ randomButton.addEventListener('click', () => {
 })
 renderSnippet();
 
-fetch('https://autocard.mpaulweeks.com/json/version.json')
-  .then(resp => resp.json())
+AUTOCARD.getVersion()
   .then(vData => {
     jsonUpdated.innerHTML = vData.updated.substring(0, 10);
     jsonVersion.innerHTML = vData.version;
