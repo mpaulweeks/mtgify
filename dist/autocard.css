@@ -1,14 +1,19 @@
 auto-card-list,
 auto-card-list-title,
+auto-card-list-body,
 auto-card-list-preview,
 auto-card-list-category,
 auto-card-list-category-title,
+auto-card-list-text-container,
+auto-card-list-image-container,
 auto-card-list-category auto-card {
   display: block;
 }
 
-auto-card-list-container {
-  display: block;
+auto-card-list-image-container img {
+  width: 100px;
+}
+auto-card-list-text-container {
   column-count: 3;
   padding: 5px;
 }
@@ -51,7 +56,4 @@ auto-card-list auto-card a {
 }
 auto-card-list auto-card a:hover {
   text-decoration: underline;
-}
-auto-card-list-images img {
-  width: 100px;
 }
