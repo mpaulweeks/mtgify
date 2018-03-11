@@ -23,7 +23,8 @@ auto-card-image-quantity {
   bottom: 5px;
   left: 5px;
   padding: 5px;
-  border: 1px solid white;
+  border: 2px solid white;
+  border-radius: 20px;
   background-color: black;
   color: white;
   font-size: 20px;
