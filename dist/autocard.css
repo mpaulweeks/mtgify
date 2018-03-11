@@ -1,3 +1,4 @@
+
 auto-card-list,
 auto-card-list-title,
 auto-card-list-body,
@@ -10,8 +11,26 @@ auto-card-list-category auto-card {
   display: block;
 }
 
+auto-card-image {
+  position: relative;
+  display: inline-block;
+}
+auto-card-image a {
+  display: inline-block;
+}
+auto-card-image-quantity {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  padding: 5px;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
 auto-card-list-image-container img {
-  width: 100px;
+  width: 200px;
 }
 auto-card-list-text-container {
   column-count: 3;
