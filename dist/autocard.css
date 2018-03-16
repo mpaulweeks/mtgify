@@ -1,14 +1,39 @@
+
 auto-card-list,
 auto-card-list-title,
+auto-card-list-body,
 auto-card-list-preview,
 auto-card-list-category,
 auto-card-list-category-title,
+auto-card-list-text-container,
+auto-card-list-image-container,
 auto-card-list-category auto-card {
   display: block;
 }
 
-auto-card-list-container {
-  display: block;
+auto-card-image {
+  position: relative;
+  display: inline-block;
+}
+auto-card-image a {
+  display: inline-block;
+}
+auto-card-image-quantity {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+auto-card-list-image-container img {
+  width: 200px;
+}
+auto-card-list-text-container {
   column-count: 3;
   padding: 5px;
 }
@@ -40,9 +65,6 @@ auto-card-list-category {
   page-break-inside: avoid;           /* Theoretically FF 20+ */
   break-inside: avoid-column;         /* IE 11 */
   display:table;
-}
-auto-card-list-category auto-card-image img {
-  width: 100px;
 }
 auto-card-list-category-title {
   font-style: italic;

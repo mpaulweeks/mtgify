@@ -11,6 +11,9 @@ const linkSource = document.getElementById('linkSource');
 const randomButton = document.getElementById('random');
 const snippetExmaple = document.getElementById('snippetExample');
 const snippetLink = document.getElementById('snippetLink');
+const jsonUpdated = document.getElementById('jsonUpdated');
+const jsonVersion = document.getElementById('jsonVersion');
+const updatedElms = Array.from(document.getElementsByClassName('updated'));
 
 function getSourceOption(sourceName) {
   return `<option value=${sourceName}>${AC.constants.displayName[sourceName]}</option>`
@@ -18,16 +21,22 @@ function getSourceOption(sourceName) {
 imgSource.innerHTML = AC.constants.imgSources.map(getSourceOption).join('')
 linkSource.innerHTML = AC.constants.linkSources.map(getSourceOption).join('')
 
-function renderCard(){
+function renderCard(newCard){
+  snippetExample.innerHTML = 'loading...';
   if (cardName === ''){
-    snippetExample.innerHTML = 'loading...';
     AC.getRandomCard(config).then(card => {
       cardName = card.name;
-      renderCard();
+      renderCard(true);
     })
   } else {
     snippetExample.innerHTML = cardName;
     AC.tagElement(snippetExample, config);
+    if (!newCard){
+      updatedElms.forEach(elm => elm.classList.remove('updated-fade-out'));
+      setTimeout(() => {
+        updatedElms.forEach(elm => elm.classList.add('updated-fade-out'));
+      }, 1000);
+    }
   }
 }
 function renderSnippet(){
@@ -44,3 +53,9 @@ randomButton.addEventListener('click', () => {
   renderCard();
 })
 renderSnippet();
+
+AUTOCARD.getVersion()
+  .then(vData => {
+    jsonUpdated.innerHTML = vData.updated.substring(0, 10);
+    jsonVersion.innerHTML = vData.version;
+  })
