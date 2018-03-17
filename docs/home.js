@@ -8,6 +8,7 @@ let cardName = ''
 
 const imgSource = document.getElementById('imgSource');
 const linkSource = document.getElementById('linkSource');
+const thirdParties = document.getElementById('thirdParties');
 const randomButton = document.getElementById('random');
 const snippetExmaple = document.getElementById('snippetExample');
 const snippetLink = document.getElementById('snippetLink');
@@ -18,8 +19,14 @@ const updatedElms = Array.from(document.getElementsByClassName('updated'));
 function getSourceOption(sourceName) {
   return `<option value=${sourceName}>${AC.constants.displayName[sourceName]}</option>`
 }
-imgSource.innerHTML = AC.constants.imgSources.map(getSourceOption).join('')
-linkSource.innerHTML = AC.constants.linkSources.map(getSourceOption).join('')
+imgSource.innerHTML = AC.constants.imgSources.map(getSourceOption).join('');
+linkSource.innerHTML = AC.constants.linkSources.map(getSourceOption).join('');
+
+function getPartnerLink(sourceName) {
+  const url = AC.constants.displayName[sourceName];
+  return `<a href=${url}>${url}</a>`;
+}
+thirdParties.innerHTML = AC.constants.partners.map(getPartnerLink).join(' / ');
 
 function renderCard(newCard){
   snippetExample.innerHTML = 'loading...';
