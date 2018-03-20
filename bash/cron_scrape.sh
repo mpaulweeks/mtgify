@@ -9,4 +9,6 @@ then
 
   node script/gen_json.js
   node script/upload_s3_json.js
+else
+  echo "MTG JSON up to date"
 fi
