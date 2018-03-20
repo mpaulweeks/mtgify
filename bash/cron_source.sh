@@ -16,6 +16,6 @@ then
   npm run build
   node script/upload_s3_dist.js
 
-  node script/gen-json.js
+  node script/gen_json.js
   node script/upload_s3_json.js
 fi
