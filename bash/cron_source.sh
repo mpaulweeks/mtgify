@@ -7,7 +7,8 @@ if ! [[ $gout == *"Already up-to-date." ]]
 then
   echo "Source changes found..."
 
-  npm install
+  # https://github.com/npm/npm/issues/17722
+  npm install --no-save
   npm prune
 
   node script/gen-json.js
