@@ -1,4 +1,5 @@
 export PATH=$PATH:/home/ec2-user/.nvm/versions/node/v8.9.1/bin/
+export $(cat .env* | grep -v ^# | xargs)
 
 git checkout master
 gout=$(git pull 2>&1)
@@ -12,8 +13,9 @@ then
   npm prune
   git checkout -- package-lock.json
 
-  node script/gen-json.js
   npm run build
+  node script/upload_s3_dist.js
 
-  # todo s3
+  node script/gen-json.js
+  node script/upload_s3_json.js
 fi
