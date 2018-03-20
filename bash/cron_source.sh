@@ -8,8 +8,9 @@ then
   echo "Source changes found..."
 
   # https://github.com/npm/npm/issues/17722
-  npm install --no-save
+  npm install
   npm prune
+  git checkout -- package-lock.json
 
   node script/gen-json.js
   npm run build
