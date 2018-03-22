@@ -1,6 +1,8 @@
 
 const config = {
   enableAutoTag: true,
+  popupAutoTag: true,
+  ignoreCase: false,
   excludeUnsets: true,
 };
 const AC = window.AUTOCARD
