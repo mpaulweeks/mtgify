@@ -4,4 +4,4 @@
 
 assorted tools for MTG apps
 
-[View documentation and usage examples](https://autocard.mpaulweeks.com)
+[View documentation and usage examples](https://magicautocard.info)
