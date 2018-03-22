@@ -58,7 +58,7 @@
     <div class="container">
       <div class="row navbar">
         <div><a href="#snippet">autocard bookmark</a></div>
-        <div><a href="#library">autocard on your page</a></div>
+        <div><a href="#library">autocard on your website</a></div>
         <div><a href="#config">configuration</a></div>
         <div><a href="#about">about</a></div>
       </div>
@@ -207,15 +207,23 @@
         <div>
           <ul>
             <li>
-              AutoTagging starts with an element (document.body or otherwise specified) and recursively tags all children
+              AutoTagging starts with an HTML element (document.body or otherwise specified) and recursively tags all child elements
             </li>
             <li>
-              AutoTagging ignores tags that start with <b>auto-card</b>
+              AutoTagging ignores HTML elements that start with <b>auto-card</b>
             </li>
             <li>
-              AutoTagging ignores tags with the attribute <b>auto-card-off</b>
+              AutoTagging ignores HTML elements with the attribute <b>auto-card-off</b>
             </li>
           </ul>
+        <script type="text/plain" class="language-markup">
+          <div auto-card-off>
+            Ignore my text about Shock and Terror!
+            <a href="#">
+              It will also ignore this element and any other children
+            </a>
+          </div>
+        </script>
       </div>
 
       <div class="row">
