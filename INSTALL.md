@@ -23,3 +23,7 @@ create dist files
 ```
 npm run build
 ```
+
+# s3 and CloudFront setup
+
+https://medium.com/@willmorgan/moving-a-static-website-to-aws-s3-cloudfront-with-https-1fdd95563106

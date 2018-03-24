@@ -1,5 +1,5 @@
 {
-  "name": "mtg-toolbox",
+  "name": "mtgify",
   "version": "1.0.0",
   "description": "assorted tools for MTG apps",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mpaulweeks/mtg-toolbox.git"
+    "url": "git+https://github.com/mpaulweeks/mtgify.git"
   },
   "author": "mpaulweeks",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mpaulweeks/mtg-toolbox/issues"
+    "url": "https://github.com/mpaulweeks/mtgify/issues"
   },
-  "homepage": "https://github.com/mpaulweeks/mtg-toolbox#readme",
+  "homepage": "https://github.com/mpaulweeks/mtgify#readme",
   "devDependencies": {
     "babel-preset-stage-2": "^6.24.1",
     "babelify": "^8.0.0",

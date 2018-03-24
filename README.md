@@ -1,6 +1,6 @@
-# mtg-toolbox
+# mtgify
 
-[![CircleCI](https://circleci.com/gh/mpaulweeks/mtg-toolbox/tree/master.svg?style=svg)](https://circleci.com/gh/mpaulweeks/mtg-toolbox/tree/master)
+[![CircleCI](https://circleci.com/gh/mpaulweeks/mtgify/tree/master.svg?style=svg)](https://circleci.com/gh/mpaulweeks/mtgify/tree/master)
 
 assorted tools for MTG apps
 
