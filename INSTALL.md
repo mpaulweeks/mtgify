@@ -26,4 +26,5 @@ npm run build
 
 # s3 and CloudFront setup
 
-https://medium.com/@willmorgan/moving-a-static-website-to-aws-s3-cloudfront-with-https-1fdd95563106
+- https://medium.com/@willmorgan/moving-a-static-website-to-aws-s3-cloudfront-with-https-1fdd95563106
+- https://www.boxuk.com/insight/tech-posts/enabling-cross-domain-access-cloudfront
