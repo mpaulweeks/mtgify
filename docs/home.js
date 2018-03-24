@@ -5,7 +5,7 @@ const config = {
   ignoreCase: false,
   excludeUnsets: true,
 };
-const AC = window.AUTOCARD
+const AC = window.MTGIFY
 let cardName = ''
 
 const imgSource = document.getElementById('imgSource');
@@ -63,7 +63,7 @@ randomButton.addEventListener('click', () => {
 })
 renderSnippet();
 
-AUTOCARD.getVersion()
+MTGIFY.getVersion()
   .then(vData => {
     jsonUpdated.innerHTML = vData.updated.substring(0, 10);
     jsonVersion.innerHTML = vData.version;

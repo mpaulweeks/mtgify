@@ -275,24 +275,24 @@
 
       <div class="row">
         <div class="instructions">
-          Including the script defines the global variable AUTOCARD
+          Including the script defines the global variable MTGIFY
         </div>
 
         <script type="text/plain" class="language-javascript">
           // search entire document for card names and create auto-cards
           // you get the same affect on page load by setting "enableAutoTag: false"
           // config is optional, if present will override global config
-          AUTOCARD.tagBody(config);
+          MTGIFY.tagBody(config);
 
           // search an element for card names and create auto-cards
           // useful if you're dynamically generating HTML with Javascript
           // config is optional, if present will override global config
           const elm = document.getElementById('new-thing');
-          AUTOCARD.tagElement(elm, config);
+          MTGIFY.tagElement(elm, config);
 
           // returns a promise with a new random card
           // config is optional, if present will override global config
-          AUTOCARD.getRandomCard(config)
+          MTGIFY.getRandomCard(config)
             .then(card => {
               console.log(card);
             })
