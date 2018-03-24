@@ -71,9 +71,14 @@ li {
 .navbar {
   display: flex;
   flex-wrap: wrap;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.navbar a {
+  color: #404040;
 }
 .navbar div {
-  width: 200px;
+  width: 160px;
   margin: 0px auto;
 }
 

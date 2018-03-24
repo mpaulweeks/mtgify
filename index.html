@@ -57,9 +57,15 @@
 
   <div class="section">
     <div class="container">
+      <div class="row">
+        <div>
+          jump to documentation
+        </div>
+      </div>
       <div class="row navbar">
-        <div><a href="#snippet">autocard bookmark</a></div>
-        <div><a href="#library">autocard on your website</a></div>
+        <div><a href="#snippet">any website</a></div>
+        <div><a href="#library">your website</a></div>
+        <div><a href="#decklist">decklists</a></div>
         <div><a href="#config">configuration</a></div>
         <div><a href="#about">about</a></div>
       </div>
@@ -119,9 +125,11 @@
       <div class="row">
         That's it! Then go to any page and click the bookmark. For example, <a href="http://edhsource.com/?p=45">this article on competitive EDH theory</a>
       </div>
+      <div class="row">
+        Nervous about running some random code in your browser? You can check the source yourself on <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">GitHub</a>
+      </div>
     </div>
   </div>
-
 
   <div class="section library">
     <a name="library"></a>
@@ -180,18 +188,55 @@
           <auto-card-image>Caustic Caterpillar</auto-card-image>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="section library">
+    <a name="decklist"></a>
+    <div class="container">
+      <div class="row header">
+        Render Decklists on your Website
+      </div>
+      <div class="row example-block">
+        NOTE: Decklists are still in beta, more documentation + features forthcoming
+      </div>
 
       <div class="row example-block">
         <div class="instructions">
           Create a decklist
         </div>
         <script type="text/plain" class="language-markup">
-          <auto-card-list name="SAM BLACK'S LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
+          <auto-card-list name="Sam Black's LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
         </script>
         <div class="example-rendered">
-          <auto-card-list name="SAM BLACK'S LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
+          <auto-card-list name="Sam Black's LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
         </div>
       </div>
+
+      <div class="row example-block">
+        <div class="instructions">
+          Create a decklist with an image preview on the side
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card-list preview name="Sam Black's LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
+        </script>
+        <div class="example-rendered">
+          <auto-card-list preview name="Sam Black's LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
+        </div>
+      </div>
+
+      <div class="row example-block">
+        <div class="instructions">
+          Create a decklist with inline images + quantities
+        </div>
+        <script type="text/plain" class="language-markup">
+          <auto-card-list showImages name="Sam Black's LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
+        </script>
+        <div class="example-rendered">
+          <auto-card-list showImages name="Sam Black's LANTERN CONTROL" src="docs/lantern_control.dec"></auto-card-list>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="section">
@@ -315,10 +360,8 @@
       <div class="row">
         <div>
           <i>Code last updated</i>
-          <span>2018-03-10</span>
-        </div>
-        <div>
-          <a href="https://github.com/mpaulweeks/mtg-toolbox/tree/master/lib">view source code</a>
+          <span>2018-03-24</span>
+          <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">view source</a>
         </div>
       </div>
       <div class="row">
@@ -342,7 +385,7 @@
       <div class="row">
         This site is not affiliated with any of the sites it links to:
         <div id="thirdParties"></div>
-        If you would like your site to be added or removed, please contact me on <a href="https://twitter.com/mpaulweeks">twitter</a>.
+        If you would like your site to be added or removed, please DM me on <a href="https://twitter.com/mpaulweeks">Twitter</a>.
       </div>
     </div>
   </div>
