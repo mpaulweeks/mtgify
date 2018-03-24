@@ -52,7 +52,7 @@ function renderSnippet(){
   config.imgSource = imgSource.value;
   config.linkSource = linkSource.value;
 
-  snippetLink.setAttribute('href', `javascript:(function(){window.AUTOCARD_CONFIG=${JSON.stringify(config)};document.body.appendChild(document.createElement('script')).src='https://magicautocard.info/dist/autocard.js';})();`);
+  snippetLink.setAttribute('href', `javascript:(function(){window.AUTOCARD_CONFIG=${JSON.stringify(config)};document.body.appendChild(document.createElement('script')).src='https://mtgify.org/dist/autocard.js';})();`);
   renderCard();
 }
 imgSource.onchange = renderSnippet;

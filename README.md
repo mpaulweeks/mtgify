@@ -4,4 +4,4 @@
 
 assorted tools for MTG apps
 
-[View documentation and usage examples](https://magicautocard.info)
+[View documentation and usage examples](https://mtgify.org)
