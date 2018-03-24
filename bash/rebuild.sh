@@ -7,7 +7,7 @@ npm prune
 git checkout -- package-lock.json
 
 npm run build
-node script/upload_s3_dist.js
+node script/upload_s3_code.js
 
 node script/gen_json.js
 node script/upload_s3_json.js
