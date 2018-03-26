@@ -3,6 +3,8 @@ export $(cat .env* | grep -v ^# | xargs)
 
 nout=$(node script/scrape.js)
 echo $nout
+node script/upload_s3_version.js
+
 if [[ $nout == *"true" ]]
 then
   echo "New MTG JSON version..."
