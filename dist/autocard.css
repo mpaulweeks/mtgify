@@ -48,7 +48,7 @@ auto-card-list-title {
   padding: 10px;
 }
 auto-card-list-preview {
-  margin: 10px auto;
+  margin: 0px auto;
   --width: 200px;
   width: var(--width);
   height: calc(var(--width)*310/223);
