@@ -44,8 +44,15 @@ auto-card-list-title {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  text-decoration: underline;
   padding: 10px;
+}
+auto-card-list-title span {
+  text-decoration: underline;
+}
+auto-card-list-toggle {
+  padding-left: 5px;
+  text-decoration: none;
+  cursor: pointer;
 }
 auto-card-list-preview {
   margin: 0px auto;
