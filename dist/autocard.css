@@ -43,6 +43,8 @@ auto-card-list {
 auto-card-list-title {
   text-align: center;
   font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
   padding: 5px;
 }
 auto-card-list-preview {
@@ -50,7 +52,8 @@ auto-card-list-preview {
   width: var(--width);
   height: calc(var(--width)*310/223);
   background-image: url('http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=0&type=card');
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 auto-card-list-preview img {
   max-width: 100%;
