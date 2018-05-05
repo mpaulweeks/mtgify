@@ -86,3 +86,18 @@ auto-card-list auto-card a {
 auto-card-list auto-card a:hover {
   text-decoration: underline;
 }
+
+/* mobile */
+@media (max-width: 650px) {
+  auto-card-list-text-container {
+    column-count: 2;
+  }
+}
+@media (max-width: 450px) {
+  auto-card-list-text-container {
+    column-count: 1;
+  }
+  auto-card-list-preview {
+    display: none;
+  }
+}
