@@ -42,6 +42,15 @@ auto-card-list-text-container {
 auto-card-list {
   text-align: left;
 }
+auto-card-list-diff {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+auto-card-list-diff auto-card-list {
+  column-count: 1;
+}
 auto-card-list-title {
   text-align: center;
   font-size: 20px;
