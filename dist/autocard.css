@@ -1,14 +1,14 @@
 auto-card-list-diff,
-auto-card-list-diff-title,
+auto-card-list-diff-head,
 auto-card-list-diff-body,
 auto-card-list,
-auto-card-list-title,
+auto-card-list-head,
 auto-card-list-info,
 auto-card-list-link,
 auto-card-list-body,
 auto-card-list-preview,
 auto-card-list-category,
-auto-card-list-category-title,
+auto-card-list-category-type,
 auto-card-list-text-container,
 auto-card-list-image-container,
 auto-card-list-category auto-card {
@@ -56,13 +56,13 @@ auto-card-list-diff-body auto-card-list {
 auto-card-list-diff-body auto-card-list-text-container {
   column-count: 1;
 }
-auto-card-list-title {
+auto-card-list-head {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
   padding: 10px;
 }
-auto-card-list-title span {
+auto-card-list-head span {
   text-decoration: underline;
 }
 auto-card-list-toggle {
@@ -105,7 +105,7 @@ auto-card-list-category {
   break-inside: avoid-column;         /* IE 11 */
   display:table;
 }
-auto-card-list-category-title {
+auto-card-list-category-type {
   font-style: italic;
   font-weight: bold;
 }
