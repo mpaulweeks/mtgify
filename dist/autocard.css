@@ -48,7 +48,7 @@ auto-card-list-diff-body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
 }
 auto-card-list-diff-body auto-card-list {
   flex: 0.5;
@@ -62,20 +62,18 @@ auto-card-list-head {
   font-weight: bold;
   padding: 10px;
 }
-auto-card-list-head span {
-  text-decoration: underline;
-}
 auto-card-list-toggle {
   padding-left: 5px;
   text-decoration: none;
   cursor: pointer;
 }
+auto-card-list-name {
+  text-decoration: underline;
+}
 auto-card-list-info {
-  text-align: center;
   font-style: italic;
 }
 auto-card-list-link {
-  text-align: center;
 }
 auto-card-list-preview {
   margin: 0px auto;
