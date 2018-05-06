@@ -1,4 +1,6 @@
-
+auto-card-list-diff,
+auto-card-list-diff-title,
+auto-card-list-diff-body,
 auto-card-list,
 auto-card-list-title,
 auto-card-list-info,
@@ -42,13 +44,16 @@ auto-card-list-text-container {
 auto-card-list {
   text-align: left;
 }
-auto-card-list-diff {
+auto-card-list-diff-body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
-auto-card-list-diff auto-card-list {
+auto-card-list-diff-body auto-card-list {
+  flex: 0.5;
+}
+auto-card-list-diff-body auto-card-list-text-container {
   column-count: 1;
 }
 auto-card-list-title {
