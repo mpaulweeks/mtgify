@@ -61,7 +61,6 @@ auto-card-list-diff-body auto-card-list-text-container {
 auto-card-list-head {
   text-align: center;
   font-size: 16px;
-  font-weight: bold;
   padding: 10px;
 }
 auto-card-list-toggle {
