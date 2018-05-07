@@ -1,8 +1,6 @@
-auto-card-list-diff,
-auto-card-list-diff-head,
-auto-card-list-diff-body,
 auto-card-list,
 auto-card-list-head,
+auto-card-list-diff,
 auto-card-list-body,
 auto-card-list-name,
 auto-card-list-info,
@@ -46,16 +44,16 @@ auto-card-list-text-container {
 auto-card-list {
   text-align: left;
 }
-auto-card-list-diff-body {
+auto-card-list-diff {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
 }
-auto-card-list-diff-body auto-card-list {
+auto-card-list-diff auto-card-list-body {
   flex: 0.5;
 }
-auto-card-list-diff-body auto-card-list-text-container {
+auto-card-list-diff auto-card-list-text-container {
   column-count: 1;
 }
 auto-card-list-head {
