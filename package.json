@@ -21,7 +21,7 @@
   "homepage": "https://github.com/mpaulweeks/mtgify#readme",
   "devDependencies": {
     "babel-preset-stage-2": "^6.24.1",
-    "babelify": "^10.0.0",
+    "babelify": "^8.0.0",
     "browserify": "^16.2.3",
     "jest": "^23.6.0",
     "uglify-es": "^3.3.9",

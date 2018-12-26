@@ -9,7 +9,7 @@ run tests once
 npm run test
 ```
 
-run tests continously
+run tests continuously
 ```
 npm run ci
 ```
