@@ -25,7 +25,7 @@ imgSource.innerHTML = AC.constants.imgSources.map(getSourceOption).join('');
 linkSource.innerHTML = AC.constants.linkSources.map(getSourceOption).join('');
 
 function getPartnerLink(sourceName) {
-  const url = AC.constants.urls[sourceName];
+  const url = AC.constants.displayUrls[sourceName];
   const name = AC.constants.displayName[sourceName];
   return `<a href="${url}">${name}</a>`;
 }

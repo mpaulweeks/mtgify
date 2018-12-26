@@ -19,12 +19,12 @@
   <!-- <script src="build/autocard.js"></script> -->
 
   <!-- library -->
-  <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20180505" />
-  <script src="https://mtgify.org/dist/autocard.js?v=20180505"></script>
+  <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20181226" />
+  <script src="https://mtgify.org/dist/autocard.js?v=20181226"></script>
 
   <!-- styled and interaction for info page -->
-  <link rel="stylesheet" href="docs/home.css?v=20180505" />
-  <script src="docs/home.js?v=20180505" defer></script>
+  <link rel="stylesheet" href="docs/home.css?v=20181226" />
+  <script src="docs/home.js?v=20181226" defer></script>
 
   <!-- https://developers.facebook.com/tools/debug/sharing/ -->
   <meta property="og:url"                content="https://mtgify.org" />
@@ -87,7 +87,6 @@
           <select id="linkSource">
             <option value="gatherer" selected="selected">Gatherer</option>
             <option value="combodeck">combodeck.net</option>
-            <option value="magicCardsInfo">magiccards.info</option>
             <option value="scryfall">scryfall.com</option>
           </select>
         </div>
@@ -96,7 +95,6 @@
           <label for="imgSource"> Image source: </label>
           <select id="imgSource">
             <option value="gatherer" selected="selected">Gatherer</option>
-            <option value="magicCardsInfo">magiccards.info</option>
             <option value="scryfall">scryfall.com</option>
           </select>
         </div>
@@ -309,7 +307,7 @@
           trimWhitespace: true,
           excludeUnsets: false,
 
-          // options: gatherer, magicCardsInfo, scryfall, urzaCo, comboDeck (link only)
+          // options: gatherer, scryfall, urzaCo, comboDeck (link only)
           linkSource: "gatherer",
           imgSource: "gatherer",
         </script>
@@ -320,10 +318,10 @@
           You can use many of the settings as attributes on any of the card tags
         </div>
         <script type="text/plain" class="language-markup">
-          <auto-card imgSource="magicCardsInfo" linkSource="comboDeck">Path to Exile</auto-card>
+          <auto-card imgSource="scryfall" linkSource="comboDeck">Path to Exile</auto-card>
         </script>
         <div class="example-rendered">
-          <auto-card imgSource="magicCardsInfo" linkSource="comboDeck">Path to Exile</auto-card>
+          <auto-card imgSource="scryfall" linkSource="comboDeck">Path to Exile</auto-card>
         </div>
       </div>
 
@@ -369,7 +367,7 @@
       <div class="row">
         <div>
           <i>Code last updated</i>
-          <span>2018-12-21</span>
+          <span>2018-12-26</span>
           <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">view source</a>
         </div>
       </div>
