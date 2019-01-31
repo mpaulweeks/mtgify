@@ -53,7 +53,7 @@ function renderSnippet(){
   config.imgSource = imgSource.value;
   config.linkSource = linkSource.value;
 
-  snippetLink.setAttribute('href', `javascript:(function(){window.MTGIFY_CONFIG=${JSON.stringify(config)};document.body.appendChild(document.createElement('script')).src='https://mtgify.org/dist/autocard.js';})();`);
+  snippetLink.setAttribute('href', `javascript:(function(){window.MTGIFY_CONFIG=${JSON.stringify(config)};document.body.appendChild(document.createElement('script')).src='https://mtgify.org/dist/autocard.js?v='+(new Date().getTime());})();`);
   renderCard();
 }
 imgSource.onchange = renderSnippet;
