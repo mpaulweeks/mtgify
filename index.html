@@ -19,12 +19,12 @@
   <!-- <script src="build/autocard.js"></script> -->
 
   <!-- library -->
-  <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20190131-12" />
-  <script src="https://mtgify.org/dist/autocard.js?v=20190131-12"></script>
+  <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20190131-13" />
+  <script src="https://mtgify.org/dist/autocard.js?v=20190131-13"></script>
 
   <!-- styled and interaction for info page -->
-  <link rel="stylesheet" href="docs/home.css?v=20190131-12" />
-  <script src="docs/home.js?v=20190131-12" defer></script>
+  <link rel="stylesheet" href="docs/home.css?v=20190131-13" />
+  <script src="docs/home.js?v=20190131-13" defer></script>
 
   <!-- https://developers.facebook.com/tools/debug/sharing/ -->
   <meta property="og:url"                content="https://mtgify.org" />
@@ -82,7 +82,7 @@
         <div class="instructions">
           Set how the links should work
         </div>
-        <div>
+        <div class="row">
           <label for="linkSource"> Cards link to: </label>
           <select id="linkSource">
             <option value="gatherer" selected="selected">Gatherer</option>
@@ -90,8 +90,7 @@
             <option value="scryfall">scryfall.com</option>
           </select>
         </div>
-        <br/>
-        <div>
+        <div class="row">
           <label for="imgSource"> Image source: </label>
           <select id="imgSource">
             <option value="gatherer" selected="selected">Gatherer</option>
@@ -101,29 +100,31 @@
       </div>
       <div class="row">
         <div class="instructions">
-          Test it out
-          <button id="random">random card</button>
+          Test it out! Try hovering your mouse over the card name below:
         </div>
-        <div>
+        <div class="row">
           Example:
           <span id="snippetExample"></span>
           <span class="updated updated-fade-out"></span>
+        </div>
+        <div class="row">
+          Try a different card: <button id="random">random card</button>
         </div>
       </div>
       <div class="row">
         <div class="instructions">
           Save it as a bookmark
         </div>
-        <div>
+        <div class="row">
           Drag this button into your bookmarks toolbar:
           <a id="snippetLink" href=""><button>MTGIFY</button></a>
           <span class="updated updated-fade-out"></span>
         </div>
+        <div class="row">
+          That's it! Then go to any page and click the bookmark. For example, <a href="https://www.mtgtop8.com/event?e=21018&d=339479&f=ST">this tournnament decklist</a>
+        </div>
       </div>
-      <div class="row">
-        That's it! Then go to any page and click the bookmark. For example, <a href="http://edhsource.com/?p=45">this article on competitive EDH theory</a>
-      </div>
-      <div class="row">
+      <div class="row italic">
         Nervous about running some random code in your browser? You can check the source yourself on <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">GitHub</a>
       </div>
     </div>
@@ -147,13 +148,13 @@
         <div style="text-align: left;">
           The stylesheet is not necessary, but recommended.
           <br/>
-          You are encouraged to overrite any and all styles in your own CSS file.
+          You are encouraged to overwrite any and all styles in your own CSS file.
         </div>
       </div>
 
       <div class="row example-block">
         <div class="instructions">
-          Create a card link
+          Create a card link with a hover image
         </div>
         <script type="text/plain" class="language-markup">
           <auto-card>Utter End</auto-card>

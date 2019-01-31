@@ -13,6 +13,9 @@ body {
 li {
   text-align: left;
 }
+button {
+  cursor: pointer;
+}
 
 .section {
   padding: 10px;
@@ -95,9 +98,15 @@ li {
   text-align: center;
   background-color: #f5f2f0;
 }
+.italic {
+  font-style: italic;
+}
 
 .snippet {
   text-align: left;
+}
+.snippet .header {
+  text-align: center;
 }
 .snippet select {
   font-size: var(--larger-font-size);
