@@ -11,7 +11,8 @@ then
   node script/scrape.js || exit 1
   node script/gen_json.js || exit 1
   node script/upload_s3_json.js || exit 1
-  node script/upload_s3_version.js || exit 1
 else
   echo "MTG JSON up to date"
 fi
+
+node script/upload_s3_version.js || exit 1
