@@ -37,11 +37,11 @@
       }
     }
   </script>
-  <!-- <link rel="stylesheet" href="dist/autocard.css" /> -->
+  <link rel="stylesheet" href="dist/autocard.css" />
   <!-- <script src="build/autocard.js"></script> -->
 
   <!-- library -->
-  <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20190714" />
+  <!-- <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20190714" /> -->
   <script src="https://mtgify.org/dist/autocard.js?v=20190714"></script>
 
   <!-- styled and interaction for info page -->
@@ -54,19 +54,8 @@
       <div class="title">
         &lt;mtgify/&gt;
       </div>
-      <div class="subtitle">
-        javascript tools for rendering Magic cards
-      </div>
     </div>
-  </div>
-
-  <div class="section">
     <div class="container">
-      <div class="row">
-        <div>
-          jump to documentation
-        </div>
-      </div>
       <div class="row navbar">
         <div><a href="#snippet">any website</a></div>
         <div><a href="#library">your website</a></div>
@@ -77,11 +66,28 @@
     </div>
   </div>
 
+  <div class="section subtitle">
+    <div class="container">
+      <div class="row">
+        <b>mtgify</b> is a tool for quickly and easily displaying Magic cards on the web.
+      </div>
+      <div class="row">
+        Just add two lines of code to your website, and any word that matches with the english name of a Magic card will be automatically converted into a link to that card on Gatherer or the MTG search engine of your choice.
+        <b>mtgify</b> also adds a handy image popup that appears if you hover over the card name, commonly known as an "autocard". There are also simple tools to inlining card images just by referring to the name, or doing your autocards manually.
+      </div>
+      <div class="row">
+        Alternatively, let's say you don't have a website of your own but find yourself reading a lot about Magic on the web. Do you have a Magic blog you like but wish it had autocard funtionality? <b>mtgify</b> can also be applied in your browser to any website you visit.
+      <div class="row">
+        Check out the examples below!
+      </div>
+    </div>
+  </div>
+
   <div class="section snippet">
     <a name="snippet"></a>
     <div class="container">
       <div class="row header">
-        Create a bookmark to have autocard on any website
+        Create a bookmark to have autocard on any website you visit
       </div>
       <div class="row">
         <div class="instructions">
@@ -151,9 +157,9 @@
           <script src="https://mtgify.org/dist/autocard.js"></script>
         --></code></pre>
         <div style="text-align: left;">
-          The stylesheet is not necessary, but recommended.
+          The stylesheet is not necessary, but recommended. Think of it as a starting point.
           <br/>
-          You are encouraged to overwrite any and all styles in your own CSS file.
+          You are more than welcome to overwrite any and all styles in your own CSS file.
         </div>
       </div>
 
@@ -333,22 +339,23 @@
 
       <div class="row">
         <div class="instructions">
-          Including the script defines the global variable MTGIFY
+          autocard.js defines the global variable MTGIFY which defines a handful of useful functions
         </div>
 
         <script type="text/plain" class="language-javascript">
-          // search entire document for card names and create auto-cards
-          // you get the same affect on page load by setting "enableAutoTag: false"
-          // config is optional, if present will override global config
+          // Search entire document for card names and create auto-cards.
+          // Note: you get the same affect on page load by setting
+          // "enableAutoTag: false". the config arg is optional,
+          // and if present, will override any global config
           MTGIFY.tagBody(config);
 
-          // search an element for card names and create auto-cards
-          // useful if you're dynamically generating HTML with Javascript
+          // Search an HTMLElement for card names and create auto-cards
+          // useful if you're dynamically generating HTML with Javascript.
           // config is optional, if present will override global config
           const elm = document.getElementById('new-thing');
           MTGIFY.tagElement(elm, config);
 
-          // returns a promise with a new random card
+          // Returns a promise with a new random card.
           // config is optional, if present will override global config
           MTGIFY.getRandomCard(config)
             .then(card => {
@@ -373,7 +380,7 @@
       <div class="row">
         <div>
           <i>Code last updated</i>
-          <span>2019-01-31</span>
+          <span>2019-07-14</span>
           <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">view source</a>
         </div>
       </div>

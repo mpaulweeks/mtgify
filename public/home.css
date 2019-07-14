@@ -3,12 +3,12 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-}
-body {
-  text-align: center;
   --normal-font-size: 16px;
   --larger-font-size: 18px;
   font-size: var(--normal-font-size);
+}
+body {
+  text-align: center;
 }
 li {
   text-align: left;
@@ -54,11 +54,10 @@ button {
 }
 
 .hero {
-  height: 150px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2rem 0px;
 
   background-color: rgb(39,40,34);
   color: #ffffff;
@@ -68,7 +67,8 @@ button {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
 .subtitle {
-  font-size: 20px;
+  font-size: var(--larger-font-size);
+  margin: 1rem;
 }
 
 .navbar {
@@ -76,9 +76,10 @@ button {
   flex-wrap: wrap;
   font-weight: bold;
   text-transform: uppercase;
+  margin-top: 1rem;
 }
 .navbar a {
-  color: #404040;
+  color: white;
 }
 .navbar div {
   width: 160px;
