@@ -5,6 +5,10 @@
 
   <link rel="stylesheet" href="../dist/autocard.css" />
   <style>
+    auto-card-image img {
+      width: 200px;
+    }
+
     p auto-card {
       display: block;
     }
@@ -18,7 +22,7 @@
 
   <script>
     MTGIFY_CONFIG = {
-      apiUrl: window.location.href + '/../../',
+      // apiUrl: window.location.href + '/../../',
       // for offline testing
       // testImagePath: 'CardImage.jpg',
     }
@@ -32,6 +36,8 @@
     <auto-card-image imgSource="gatherer" linkSource="gatherer">Force of Will</auto-card-image>
     <br />scryfall<br />
     <auto-card-image imgSource="scryfall" linkSource="scryfall">Unmask</auto-card-image>
+    <br />scryfall foreign<br />
+    <auto-card-image imgSource="scryfall" linkSource="scryfall" lang="ja">Force of Rage</auto-card-image>
     <br />urzaCo<br />
     <auto-card-image imgSource="urzaCo" linkSource="urzaCo">Summoner's Pact</auto-card-image>
   </p>
