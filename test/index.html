@@ -8,6 +8,7 @@
     p auto-card {
       display: block;
     }
+
     auto-card-list {
       background-color: lightgreen;
       border: 1px solid black;
@@ -18,16 +19,25 @@
   <script>
     MTGIFY_CONFIG = {
       apiUrl: window.location.href + '/../../',
-      testImagePath: 'CardImage.jpg',
+      // testImagePath: 'CardImage.jpg',
     }
   </script>
   <script src="../build/autocard.js"></script>
 </head>
+
 <body style="text-align: center;">
+  <p>
+    <br />gatherer<br />
+    <auto-card-image imgSource="gatherer" linkSource="gatherer">Force of Will</auto-card-image>
+    <br />scryfall<br />
+    <auto-card-image imgSource="scryfall" linkSource="scryfall">Unmask</auto-card-image>
+    <br />urzaCo<br />
+    <auto-card-image imgSource="urzaCo" linkSource="urzaCo">Summoner's Pact</auto-card-image>
+  </p>
   <p>
     <auto-card name="Counterspell"></auto-card>
     <auto-card name="Mana Drain" quantity="4"></auto-card>
-    <auto-card >Brainstorm</auto-card>
+    <auto-card>Brainstorm</auto-card>
     <auto-card quantity="3">Jace, the Mind Sculptor</auto-card>
     <auto-card name="Memory Lapse" quantity="4">Memory Lapse</auto-card>
     <auto-card name="Rapid Hybridization">custom text frog card</auto-card>
@@ -120,10 +130,15 @@
   <auto-card-list name="Collapsable With More Meta" collapse src="../docs/jodah.dec"></auto-card-list>
 
   <auto-card-list name="Text Example Gatherer" preview src="../test/sample_deck.txt"></auto-card-list>
-  <auto-card-list name="Text Example Scryfall" preview src="../test/sample_deck.txt" imgSource="scryfall" linkSource="scryfall"></auto-card-list>
-  <auto-card-list name="Text Example UrzaCo" preview src="../test/sample_deck.txt" imgSource="urzaCo" linkSource="urzaCo"></auto-card-list>
+  <auto-card-list name="Text Example Scryfall" preview src="../test/sample_deck.txt" imgSource="scryfall"
+    linkSource="scryfall"></auto-card-list>
+  <auto-card-list name="Text Example UrzaCo" preview src="../test/sample_deck.txt" imgSource="urzaCo"
+    linkSource="urzaCo"></auto-card-list>
 
-  <auto-card-list name="Image Example Gatherer" showImages src="../test/sample_deck.txt" imgSource="gatherer" linkSource="gatherer"></auto-card-list>
-  <auto-card-list name="Image Example Scryfall" showImages src="../test/sample_deck.txt" imgSource="scryfall" linkSource="scryfall"></auto-card-list>
-  <auto-card-list name="Image Example UrzaCo" showImages src="../test/sample_deck.txt" imgSource="urzaCo" linkSource="urzaCo"></auto-card-list>
+  <auto-card-list name="Image Example Gatherer" showImages src="../test/sample_deck.txt" imgSource="gatherer"
+    linkSource="gatherer"></auto-card-list>
+  <auto-card-list name="Image Example Scryfall" showImages src="../test/sample_deck.txt" imgSource="scryfall"
+    linkSource="scryfall"></auto-card-list>
+  <auto-card-list name="Image Example UrzaCo" showImages src="../test/sample_deck.txt" imgSource="urzaCo"
+    linkSource="urzaCo"></auto-card-list>
 </body>
