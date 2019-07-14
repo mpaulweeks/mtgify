@@ -17,9 +17,12 @@
   </style>
 
   <script>
-    MTGIFY_CONFIG = {
-      apiUrl: window.location.href + '/../../',
-      // testImagePath: 'CardImage.jpg',
+    if (!window.location.href.includes('https://mtgify.org')) {
+      MTGIFY_CONFIG = {
+        apiUrl: window.location.href + '/../../',
+        // for offline testing
+        // testImagePath: 'CardImage.jpg',
+      }
     }
   </script>
   <script src="../build/autocard.js"></script>

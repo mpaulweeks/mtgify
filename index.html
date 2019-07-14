@@ -10,21 +10,24 @@
 
   <!-- testing -->
   <script>
-    MTGIFY_CONFIG = {
-      // apiUrl: window.location.origin + window.location.pathname + '/../../',
-      // testImagePath: '../test/CardImage.jpg',
+    if (!window.location.href.includes('https://mtgify.org')) {
+      MTGIFY_CONFIG = {
+        apiUrl: window.location.origin + window.location.pathname + '/../../',
+        // for offline testing
+        // testImagePath: '../test/CardImage.jpg',
+      }
     }
   </script>
   <!-- <link rel="stylesheet" href="dist/autocard.css" /> -->
   <!-- <script src="build/autocard.js"></script> -->
 
   <!-- library -->
-  <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20190131-13" />
-  <script src="https://mtgify.org/dist/autocard.js?v=20190131-13"></script>
+  <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20190714" />
+  <script src="https://mtgify.org/dist/autocard.js?v=20190714"></script>
 
   <!-- styled and interaction for info page -->
-  <link rel="stylesheet" href="docs/home.css?v=20190131-13" />
-  <script src="docs/home.js?v=20190131-13" defer></script>
+  <link rel="stylesheet" href="docs/home.css?v=20190714" />
+  <script src="docs/home.js?v=20190714" defer></script>
 
   <!-- https://developers.facebook.com/tools/debug/sharing/ -->
   <meta property="og:url"                content="https://mtgify.org" />
