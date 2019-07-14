@@ -57,7 +57,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 0px;
+  padding: 1rem 0px;
 
   background-color: rgb(39,40,34);
   color: #ffffff;
@@ -65,6 +65,7 @@ button {
 .title {
   font-size: 80px;
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  margin: 1rem;
 }
 .subtitle {
   font-size: var(--larger-font-size);
@@ -74,9 +75,7 @@ button {
 .navbar {
   display: flex;
   flex-wrap: wrap;
-  font-weight: bold;
   text-transform: uppercase;
-  margin-top: 1rem;
 }
 .navbar a {
   color: white;
