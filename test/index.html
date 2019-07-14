@@ -1,7 +1,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>⚠️TEST PAGE⚠️</title>
-  <link rel="icon" type="image/icon" href="../docs/favicon.png">
+  <link rel="icon" type="image/icon" href="../public/favicon.png">
 
   <link rel="stylesheet" href="../dist/autocard.css" />
   <style>
@@ -17,12 +17,10 @@
   </style>
 
   <script>
-    if (!window.location.href.includes('https://mtgify.org')) {
-      MTGIFY_CONFIG = {
-        apiUrl: window.location.href + '/../../',
-        // for offline testing
-        // testImagePath: 'CardImage.jpg',
-      }
+    MTGIFY_CONFIG = {
+      apiUrl: window.location.href + '/../../',
+      // for offline testing
+      // testImagePath: 'CardImage.jpg',
     }
   </script>
   <script src="../build/autocard.js"></script>
@@ -126,11 +124,11 @@
     1x Fire / Ice
   </auto-card-list>
 
-  <auto-card-list preview src="../docs/jodah.dec"></auto-card-list>
+  <auto-card-list preview src="../public/jodah.dec"></auto-card-list>
 
   <auto-card-list src="../test/sample_deck.txt"></auto-card-list>
   <auto-card-list name="Collapsable Deck Example" collapse src="../test/sample_deck.txt"></auto-card-list>
-  <auto-card-list name="Collapsable With More Meta" collapse src="../docs/jodah.dec"></auto-card-list>
+  <auto-card-list name="Collapsable With More Meta" collapse src="../public/jodah.dec"></auto-card-list>
 
   <auto-card-list name="Text Example Gatherer" preview src="../test/sample_deck.txt"></auto-card-list>
   <auto-card-list name="Text Example Scryfall" preview src="../test/sample_deck.txt" imgSource="scryfall"
