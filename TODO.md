@@ -8,4 +8,3 @@
   - stacked visual effect, rather than number
 - fix google search result description
 - multi language support?
-- better cache busting on json fetch
