@@ -4,4 +4,6 @@
 
 https://mtgify.org
 
+[Status Page](https://mpaulweeks.github.io/mtgify/status)
+
 Please submit feature requests by using [GitHub's issue tracker](https://github.com/mpaulweeks/mtgify/issues)
