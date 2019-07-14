@@ -6,4 +6,3 @@
 - flesh out / finish deck lists
   - nice styles
   - stacked visual effect, rather than number
-- multi language support?
