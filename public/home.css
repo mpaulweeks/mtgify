@@ -28,6 +28,7 @@ button {
   padding-bottom: 10px;
 }
 .container {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -74,6 +75,7 @@ button {
 
 .navbar {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   text-transform: uppercase;
 }
@@ -81,8 +83,7 @@ button {
   color: white;
 }
 .navbar div {
-  width: 160px;
-  margin: 0px auto;
+  margin: 10px;
 }
 
 .instructions {
