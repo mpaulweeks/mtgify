@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,17 @@
   <meta name="description" content="A tool for displaying Magic cards on the web" />
 
   <!-- https://developers.facebook.com/tools/debug/sharing/ -->
-  <meta property="og:url"                content="https://mtgify.org" />
-  <meta property="og:type"               content="website" />
-  <meta property="og:title"              content="mtgify" />
-  <meta property="og:description"        content="A tool for displaying Magic cards on the web" />
-  <meta property="og:image"              content="https://mtgify.org/public/favicon.png" />
+  <meta property="og:url" content="https://mtgify.org" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="mtgify" />
+  <meta property="og:description" content="A tool for displaying Magic cards on the web" />
+  <meta property="og:image" content="https://mtgify.org/public/favicon.png" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37989728-21"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-37989728-21');
@@ -48,6 +49,7 @@
   <link rel="stylesheet" href="public/home.css?v=20190714_3" />
   <script src="public/home.js?v=20190714_3" defer></script>
 </head>
+
 <body>
   <div class="section hero">
     <div class="container">
@@ -72,216 +74,226 @@
         <b>mtgify</b> is a tool for quickly and easily displaying Magic cards on the web.
       </div>
       <div class="row">
-        Just add two lines of code to your website, and any word that matches with the english name of a Magic card will be automatically converted into a link to that card on Gatherer or the MTG search engine of your choice.
-        <b>mtgify</b> also adds a handy image popup that appears if you hover over the card name, commonly known as an "autocard". There are also simple tools to inlining card images just by referring to the name, or doing your autocards manually.
+        Just add two lines of code to your website, and any word that matches with the english name of a Magic card will
+        be automatically converted into a link to that card on Gatherer or the MTG search engine of your choice.
+        <b>mtgify</b> also adds a handy image popup that appears if you hover over the card name, commonly known as an
+        "autocard". There are also simple tools to inlining card images just by referring to the name, or doing your
+        autocards manually.
       </div>
       <div class="row">
-        Alternatively, let's say you don't have a website of your own but find yourself reading a lot about Magic on the web. Do you have a Magic blog you like but wish it had autocard funtionality? <b>mtgify</b> can also be applied in your browser to any website you visit.
-      <div class="row">
-        Check out the examples below!
+        Alternatively, let's say you don't have a website of your own but find yourself reading a lot about Magic on the
+        web. Do you have a Magic blog you like but wish it had autocard funtionality? <b>mtgify</b> can also be applied
+        in your browser to any website you visit.
+        <div class="row">
+          Check out the examples below!
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section snippet">
-    <a name="snippet"></a>
-    <div class="container">
-      <div class="row header">
-        Create a bookmark to have autocard on any website you visit
-      </div>
-      <div class="row">
-        <div class="instructions">
-          Set how the links should work
+    <div class="section snippet">
+      <a name="snippet"></a>
+      <div class="container">
+        <div class="row header">
+          Create a bookmark to have autocard on any website you visit
         </div>
         <div class="row">
-          <label for="linkSource"> Cards link to: </label>
-          <select id="linkSource">
-            <option value="gatherer" selected="selected">Gatherer</option>
-            <option value="combodeck">combodeck.net</option>
-            <option value="scryfall">scryfall.com</option>
-          </select>
+          <div class="instructions">
+            Set how the links should work
+          </div>
+          <div class="row">
+            <label for="linkSource"> Cards link to: </label>
+            <select id="linkSource">
+              <option value="gatherer" selected="selected">Gatherer</option>
+              <option value="combodeck">combodeck.net</option>
+              <option value="scryfall">scryfall.com</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="imgSource"> Image source: </label>
+            <select id="imgSource">
+              <option value="gatherer" selected="selected">Gatherer</option>
+              <option value="scryfall">scryfall.com</option>
+            </select>
+          </div>
         </div>
         <div class="row">
-          <label for="imgSource"> Image source: </label>
-          <select id="imgSource">
-            <option value="gatherer" selected="selected">Gatherer</option>
-            <option value="scryfall">scryfall.com</option>
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="instructions">
-          Test it out! Try hovering your mouse over the card name below:
-        </div>
-        <div class="row">
-          Example:
-          <span id="snippetExample"></span>
-          <span class="updated updated-fade-out"></span>
+          <div class="instructions">
+            Test it out! Try hovering your mouse over the card name below:
+          </div>
+          <div class="row">
+            Example:
+            <span id="snippetExample"></span>
+            <span class="updated updated-fade-out"></span>
+          </div>
+          <div class="row">
+            Try a different card: <button id="random">random card</button>
+          </div>
         </div>
         <div class="row">
-          Try a different card: <button id="random">random card</button>
+          <div class="instructions">
+            Save it as a bookmark
+          </div>
+          <div class="row">
+            Drag this button into your bookmarks toolbar:
+            <a id="snippetLink" href=""><button>MTGIFY</button></a>
+            <span class="updated updated-fade-out"></span>
+          </div>
+          <div class="row">
+            That's it! Then go to any page and click the bookmark. For example, <a
+              href="https://www.mtgtop8.com/event?e=21018&d=339479&f=ST">this tournament decklist</a>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="instructions">
-          Save it as a bookmark
+        <div class="row italic">
+          Nervous about running some random code in your browser? You can check the source yourself on <a
+            href="https://github.com/mpaulweeks/mtgify/tree/master/lib">GitHub</a>
         </div>
-        <div class="row">
-          Drag this button into your bookmarks toolbar:
-          <a id="snippetLink" href=""><button>MTGIFY</button></a>
-          <span class="updated updated-fade-out"></span>
-        </div>
-        <div class="row">
-          That's it! Then go to any page and click the bookmark. For example, <a href="https://www.mtgtop8.com/event?e=21018&d=339479&f=ST">this tournament decklist</a>
-        </div>
-      </div>
-      <div class="row italic">
-        Nervous about running some random code in your browser? You can check the source yourself on <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">GitHub</a>
       </div>
     </div>
-  </div>
 
-  <div class="section library">
-    <a name="library"></a>
-    <div class="container">
-      <div class="row header">
-        Easily display Magic cards on your own website
-      </div>
-
-      <div class="row example-block">
-        <div class="instructions">
-          Import these two files at the top of your HTML document
+    <div class="section library">
+      <a name="library"></a>
+      <div class="container">
+        <div class="row header">
+          Easily display Magic cards on your own website
         </div>
-        <pre class="language-markup"><code><!--
+
+        <div class="row example-block">
+          <div class="instructions">
+            Import these two files at the top of your HTML document
+          </div>
+          <pre class="language-markup"><code><!--
           <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css" />
           <script src="https://mtgify.org/dist/autocard.js"></script>
         --></code></pre>
-        <div style="text-align: left;">
-          The stylesheet is not necessary, but recommended. Think of it as a starting point.
-          <br/>
-          You are more than welcome to overwrite any and all styles in your own CSS file.
+          <div style="text-align: left;">
+            The stylesheet is not necessary, but recommended. Think of it as a starting point.
+            <br />
+            You are more than welcome to overwrite any and all styles in your own CSS file.
+          </div>
         </div>
-      </div>
 
-      <div class="row example-block">
-        <div class="instructions">
-          Create a card link with a hover image
-        </div>
-        <script type="text/plain" class="language-markup">
+        <div class="row example-block">
+          <div class="instructions">
+            Create a card link with a hover image
+          </div>
+          <script type="text/plain" class="language-markup">
           <auto-card>Utter End</auto-card>
         </script>
-        <div class="example-rendered">
-          <auto-card>Utter End</auto-card>
+          <div class="example-rendered">
+            <auto-card>Utter End</auto-card>
+          </div>
         </div>
-      </div>
 
-      <div class="row example-block">
-        <div class="instructions">
-          Create a card link with a custom name
-        </div>
-        <script type="text/plain" class="language-markup">
+        <div class="row example-block">
+          <div class="instructions">
+            Create a card link with a custom name
+          </div>
+          <script type="text/plain" class="language-markup">
           <auto-card name="Delver of Secrets">Delver</auto-card>
         </script>
-        <div class="example-rendered">
-          <auto-card name="Delver of Secrets">Delver</auto-card>
+          <div class="example-rendered">
+            <auto-card name="Delver of Secrets">Delver</auto-card>
+          </div>
         </div>
-      </div>
 
-      <div class="row example-block">
-        <div class="instructions">
-          Create an inline card image
-        </div>
-        <script type="text/plain" class="language-markup">
+        <div class="row example-block">
+          <div class="instructions">
+            Create an inline card image
+          </div>
+          <script type="text/plain" class="language-markup">
           <auto-card-image>Sharktocrab</auto-card-image>
         </script>
-        <div class="example-rendered">
-          <auto-card-image>Sharktocrab</auto-card-image>
+          <div class="example-rendered">
+            <auto-card-image>Sharktocrab</auto-card-image>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="section library">
-    <a name="decklist"></a>
-    <div class="container">
-      <div class="row header">
-        Render Decklists on your Website
-      </div>
-      <div class="row example-block">
-        NOTE: Decklists are still in beta, more documentation + features forthcoming
-      </div>
-
-      <div class="row example-block">
-        <div class="instructions">
-          Create a decklist
+    <div class="section library">
+      <a name="decklist"></a>
+      <div class="container">
+        <div class="row header">
+          Render Decklists on your Website
         </div>
-        <script type="text/plain" class="language-markup">
+        <div class="row example-block">
+          NOTE: Decklists are still in beta, more documentation + features forthcoming
+        </div>
+
+        <div class="row example-block">
+          <div class="instructions">
+            Create a decklist
+          </div>
+          <script type="text/plain" class="language-markup">
           <auto-card-list name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec"></auto-card-list>
         </script>
-        <div class="example-rendered">
-          <auto-card-list name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec"></auto-card-list>
+          <div class="example-rendered">
+            <auto-card-list name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec"></auto-card-list>
+          </div>
         </div>
-      </div>
 
-      <div class="row example-block">
-        <div class="instructions">
-          Create a decklist with an image preview on the side
-        </div>
-        <script type="text/plain" class="language-markup">
+        <div class="row example-block">
+          <div class="instructions">
+            Create a decklist with an image preview on the side
+          </div>
+          <script type="text/plain" class="language-markup">
           <auto-card-list preview name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec"></auto-card-list>
         </script>
-        <div class="example-rendered">
-          <auto-card-list preview name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec"></auto-card-list>
+          <div class="example-rendered">
+            <auto-card-list preview name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec">
+            </auto-card-list>
+          </div>
         </div>
-      </div>
 
-      <div class="row example-block">
-        <div class="instructions">
-          Here's the same code with a longer decklist
+        <div class="row example-block">
+          <div class="instructions">
+            Here's the same code with a longer decklist
+          </div>
+          <div class="example-rendered">
+            <auto-card-list preview name="Jodah, the Vigorous" src="public/jodah.dec"></auto-card-list>
+          </div>
         </div>
-        <div class="example-rendered">
-          <auto-card-list preview name="Jodah, the Vigorous" src="public/jodah.dec"></auto-card-list>
-        </div>
-      </div>
 
-      <div class="row example-block">
-        <div class="instructions">
-          Create a decklist with inline images + quantities
-        </div>
-        <script type="text/plain" class="language-markup">
+        <div class="row example-block">
+          <div class="instructions">
+            Create a decklist with inline images + quantities
+          </div>
+          <script type="text/plain" class="language-markup">
           <auto-card-list showImages name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec"></auto-card-list>
         </script>
-        <div class="example-rendered">
-          <auto-card-list showImages name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec"></auto-card-list>
+          <div class="example-rendered">
+            <auto-card-list showImages name="Sam Black's LANTERN CONTROL" src="public/lantern_control.dec">
+            </auto-card-list>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="section">
-    <a name="config"></a>
-    <div class="container">
-      <div class="row header">
-        Custom Configuration and API
-      </div>
-
-      <div class="row">
-        <div class="instructions">
-          AutoTagging
+    <div class="section">
+      <a name="config"></a>
+      <div class="container">
+        <div class="row header">
+          Custom Configuration and API
         </div>
-        <div>
-          <ul>
-            <li>
-              AutoTagging starts with an HTML element (document.body or otherwise specified) and recursively tags all child elements
-            </li>
-            <li>
-              AutoTagging ignores HTML elements that start with <b>auto-card</b>
-            </li>
-            <li>
-              AutoTagging ignores HTML elements with the attribute <b>auto-card-off</b>
-            </li>
-          </ul>
-        <script type="text/plain" class="language-markup">
+
+        <div class="row">
+          <div class="instructions">
+            AutoTagging
+          </div>
+          <div>
+            <ul>
+              <li>
+                AutoTagging starts with an HTML element (document.body or otherwise specified) and recursively tags all
+                child elements
+              </li>
+              <li>
+                AutoTagging ignores HTML elements that start with <b>auto-card</b>
+              </li>
+              <li>
+                AutoTagging ignores HTML elements with the attribute <b>auto-card-off</b>
+              </li>
+            </ul>
+            <script type="text/plain" class="language-markup">
           <div auto-card-off>
             Ignore my text about Shock and Terror!
             <a href="#">
@@ -289,13 +301,13 @@
             </a>
           </div>
         </script>
-      </div>
+          </div>
 
-      <div class="row">
-        <div class="instructions">
-          Set configuration for the page by defining MTGIFY_CONFIG before the script tag
-        </div>
-        <pre class="language-markup"><code><!--
+          <div class="row">
+            <div class="instructions">
+              Set configuration for the page by defining MTGIFY_CONFIG before the script tag
+            </div>
+            <pre class="language-markup"><code><!--
           <script>
             MTGIFY_CONFIG = {
               linkSource: "scryfall",
@@ -304,13 +316,13 @@
           </script>
           <script src="https://mtgify.org/dist/autocard.js"></script>
         --></code></pre>
-      </div>
+          </div>
 
-      <div class="row">
-        <div class="instructions">
-          These are the settings and their default values
-        </div>
-        <script type="text/plain" class="language-javascript">
+          <div class="row">
+            <div class="instructions">
+              These are the settings and their default values
+            </div>
+            <script type="text/plain" class="language-javascript">
           // set as true to run autotag on your page during page load
           enableAutoTag: false,
 
@@ -327,26 +339,26 @@
           // only works with scryfall as the imgSource
           language: "en",
         </script>
-      </div>
+          </div>
 
-      <div class="row">
-        <div class="instructions">
-          You can use many of the settings as attributes on any of the card tags
-        </div>
-        <script type="text/plain" class="language-markup">
+          <div class="row">
+            <div class="instructions">
+              You can use many of the settings as attributes on any of the card tags
+            </div>
+            <script type="text/plain" class="language-markup">
           <auto-card imgSource="scryfall" linkSource="comboDeck">Path to Exile</auto-card>
         </script>
-        <div class="example-rendered">
-          <auto-card imgSource="scryfall" linkSource="comboDeck">Path to Exile</auto-card>
-        </div>
-      </div>
+            <div class="example-rendered">
+              <auto-card imgSource="scryfall" linkSource="comboDeck">Path to Exile</auto-card>
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="instructions">
-          autocard.js defines the global variable MTGIFY which defines a handful of useful functions
-        </div>
+          <div class="row">
+            <div class="instructions">
+              autocard.js defines the global variable MTGIFY which defines a handful of useful functions
+            </div>
 
-        <script type="text/plain" class="language-javascript">
+            <script type="text/plain" class="language-javascript">
           // Search entire document for card names and create auto-cards.
           // Note: you get the same affect on page load by setting
           // "enableAutoTag: false". the config arg is optional,
@@ -366,53 +378,56 @@
               console.log(card);
             })
         </script>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="section">
-    <a name="about"></a>
-    <div class="container">
-      <div class="row header">
-        About
-      </div>
-      <div class="row">
-        <div>
-          developed by <a href="https://twitter.com/mpaulweeks">@mpaulweeks</a>
+      <div class="section">
+        <a name="about"></a>
+        <div class="container">
+          <div class="row header">
+            About
+          </div>
+          <div class="row">
+            <div>
+              developed by <a href="https://twitter.com/mpaulweeks">@mpaulweeks</a>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <i>Code last updated</i>
+              <span>2019-07-14</span>
+              <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">view source</a>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <i>Card data last updated</i>
+              <span id="jsonUpdated">loading...</span>
+            </div>
+            <div>
+              <i>Using MTG JSON v</i>
+              <span id="jsonVersion">loading...</span>
+              <a href="https://mtgjson.com/changelog/">view changelog</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="row">
+            The information presented on this site about Magic: The Gathering, both literal and graphical, is
+            copyrighted by Wizards of the Coast.
+            <br />
+            This website is not produced, endorsed, supported, or affiliated with Wizards of the Coast.
+          </div>
+          <div class="row">
+            This site is not affiliated with any of the sites it links to:
+            <div id="thirdParties"></div>
+            If you would like your site to be added or removed, please DM me on <a
+              href="https://twitter.com/mpaulweeks">Twitter</a>.
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div>
-          <i>Code last updated</i>
-          <span>2019-07-14</span>
-          <a href="https://github.com/mpaulweeks/mtgify/tree/master/lib">view source</a>
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <i>Card data last updated</i>
-          <span id="jsonUpdated">loading...</span>
-        </div>
-        <div>
-          <i>Using MTG JSON v</i>
-          <span id="jsonVersion">loading...</span>
-          <a href="https://mtgjson.com/changelog/">view changelog</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="row">
-        The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast.
-        <br/>
-        This website is not produced, endorsed, supported, or affiliated with Wizards of the Coast.
-      </div>
-      <div class="row">
-        This site is not affiliated with any of the sites it links to:
-        <div id="thirdParties"></div>
-        If you would like your site to be added or removed, please DM me on <a href="https://twitter.com/mpaulweeks">Twitter</a>.
-      </div>
-    </div>
-  </div>
 
 </body>
+
 </html>
