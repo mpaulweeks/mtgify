@@ -81,7 +81,7 @@ auto-card-list-preview {
   --width: 200px;
   width: var(--width);
   height: calc(var(--width)*310/223);
-  background-image: url('http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=0&type=card');
+  background-image: url('https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=0&type=card');
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
