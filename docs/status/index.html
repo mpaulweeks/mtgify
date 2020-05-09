@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,11 @@
   <meta name="description" content="A tool for displaying Magic cards on the web" />
 
   <!-- https://developers.facebook.com/tools/debug/sharing/ -->
-  <meta property="og:url"                content="https://mtgify.org" />
-  <meta property="og:type"               content="website" />
-  <meta property="og:title"              content="mtgify" />
-  <meta property="og:description"        content="A tool for displaying Magic cards on the web" />
-  <meta property="og:image"              content="https://mtgify.org/public/favicon.png" />
+  <meta property="og:url" content="https://mtgify.org" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="mtgify" />
+  <meta property="og:description" content="A tool for displaying Magic cards on the web" />
+  <meta property="og:image" content="https://mtgify.org/public/favicon.png" />
 
   <link rel="stylesheet" href="https://mtgify.org/dist/autocard.css?v=20190714" />
   <script src="https://mtgify.org/dist/autocard.js?v=20190714"></script>
@@ -21,6 +22,7 @@
       text-align: center;
       padding: 3rem;
     }
+
     .flex-row {
       display: flex;
       flex-direction: row;
@@ -28,9 +30,11 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    .flex-row > div {
+
+    .flex-row>div {
       margin: 0px 3rem;
     }
+
     auto-card-image img {
       width: 200px;
     }
@@ -40,19 +44,21 @@
 <body>
   <h1>mtgify Status Page</h1>
   <p>
-    This page exists to quickly test mtgify's core functionality from a url other than <a href="https://mtgify.org">mtgify.org</a>
+    This page exists to quickly test mtgify's core functionality from a url other than <a
+      href="https://mtgify.org">mtgify.org</a>
   </p>
   <p>
-    If any of the links or images below are broken, please contact <a href="https://twitter.com/mpaulweeks">@mpaulweeks</a>
+    If any of the links or images below are broken, please contact <a
+      href="https://twitter.com/mpaulweeks">@mpaulweeks</a>
   </p>
   <section class="flex-row">
     <div>
       <h3>gatherer</h3>
       <p>
-        <auto-card imgSource="gatherer" linkSource="gatherer">Force of Will</auto-card>
+        <auto-card imgSource="gatherer" linkSource="gatherer">Jace&#8217;s Phantasm</auto-card>
       </p>
       <div>
-        <auto-card-image imgSource="gatherer" linkSource="gatherer">Force of Will</auto-card-image>
+        <auto-card-image imgSource="gatherer" linkSource="gatherer">Jace&#8217;s Phantasm</auto-card-image>
       </div>
     </div>
     <div>
@@ -84,4 +90,5 @@
     </div>
   </section>
 </body>
+
 </html>
