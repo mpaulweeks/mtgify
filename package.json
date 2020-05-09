@@ -6,7 +6,7 @@
   "scripts": {
     "ci": "jest --watch",
     "test": "jest",
-    "build": "browserify lib/index.js -t babelify -p tinyify > dist/autocard.js",
+    "build": "rm dist/*.js && browserify lib/index.js -t babelify -p tinyify > dist/autocard.js",
     "watch": "watchify lib/index.js -t babelify -o build/autocard.js --debug --verbose"
   },
   "repository": {
