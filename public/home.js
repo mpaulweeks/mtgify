@@ -17,6 +17,7 @@ const snippetLink = document.getElementById('snippetLink');
 const jsonUpdated = document.getElementById('jsonUpdated');
 const jsonVersion = document.getElementById('jsonVersion');
 const updatedElms = Array.from(document.getElementsByClassName('updated'));
+const exampleRow = document.getElementById('exampleRow');
 
 function getSourceOption(sourceName) {
   return `<option value=${sourceName}>${AC.constants.displayName[sourceName]}</option>`
@@ -31,9 +32,9 @@ function getPartnerLink(sourceName) {
 }
 thirdParties.innerHTML = AC.constants.partners.map(getPartnerLink).join(' / ');
 
-function renderCard(newCard){
+function renderCard(newCard) {
   snippetExample.innerHTML = 'loading...';
-  if (cardName === ''){
+  if (cardName === '') {
     AC.getRandomCard(config).then(card => {
       cardName = card.name;
       renderCard(true);
@@ -41,7 +42,7 @@ function renderCard(newCard){
   } else {
     snippetExample.innerHTML = cardName;
     AC.tagElement(snippetExample, config);
-    if (!newCard){
+    if (!newCard) {
       updatedElms.forEach(elm => elm.classList.remove('updated-fade-out'));
       setTimeout(() => {
         updatedElms.forEach(elm => elm.classList.add('updated-fade-out'));
@@ -49,7 +50,7 @@ function renderCard(newCard){
     }
   }
 }
-function renderSnippet(){
+function renderSnippet() {
   config.imgSource = imgSource.value;
   config.linkSource = linkSource.value;
 
@@ -63,6 +64,10 @@ randomButton.addEventListener('click', () => {
   renderCard();
 })
 renderSnippet();
+
+Promise.all([AC.getRandomCard(), AC.getRandomCard(), AC.getRandomCard()]).then(cards => {
+  exampleRow.innerHTML += cards.map(card => `<auto-card-image>${card.name}</auto-card-image>`).join('');
+});
 
 MTGIFY.getVersion()
   .then(vData => {

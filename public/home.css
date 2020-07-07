@@ -118,3 +118,17 @@ button {
 #snippetLink button {
   font-size: var(--larger-font-size);
 }
+
+#exampleRow > auto-card-image {
+  margin: 0px 1em;
+}
+
+auto-card-image img {
+  max-height: 311px;
+}
+
+@media (max-width: 500px) {
+  #exampleRow {
+    display: none;
+  }
+}
