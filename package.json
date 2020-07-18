@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/mpaulweeks/mtgify#readme",
   "engines": {
-    "node": "8.9.1",
-    "npm": ">=5.1.1"
+    "node": "10.16.0",
+    "npm": "6.9.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

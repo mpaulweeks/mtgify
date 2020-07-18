@@ -1,7 +1,5 @@
-'use strict'
+const CDN = require('../lib/CDN');
 
-const CDN = require('../lib/CDN')
-
-  (async () => {
-    await CDN.uploadFile('gcp-cors.json')
-  })()
+(async () => {
+  await CDN.uploadFile('gcp-cors.json')
+})()
