@@ -6,6 +6,11 @@
   "scripts": {
     "cors-get": "gsutil cors get gs://mtgify.org",
     "cors-set": "gsutil cors set gcp-cors.json gs://mtgify.org",
+    "json-scrape": "node script/scrape.js",
+    "json-gen": "node script/gen_json.js",
+    "json-upload": "node script/upload_json.js && node script/upload_version.js",
+    "cron-json": "npm run json-scrape && npm run json-gen && npm run json-upload",
+    "cron-code": "npm run build && node script/upload_code.js",
     "ci": "jest --watch",
     "test": "jest",
     "build": "rm dist/*.js && browserify lib/index.js -t babelify -p tinyify > dist/autocard.js",
