@@ -1,14 +1,10 @@
-'use strict'
+const MtgJson = require('../lib/MtgJson');
+const CDN = require('../lib/CDN');
 
-const MtgJson = require('../lib/MtgJson')
-const CDN = require('../lib/CDN')
-
-MtgJson.updateVersion().then(() => {
-
+(async () => {
+  await MtgJson.updateVersion();
   const jsonFiles = [
     'json/version.json',
-  ]
-
-  CDN.uploadFilesSync(jsonFiles).then(msg => console.log(msg))
-
-})
+  ];
+  CDN.uploadFilesSync(jsonFiles);
+})();
