@@ -4,6 +4,8 @@
   "description": "assorted tools for MTG apps",
   "main": "index.js",
   "scripts": {
+    "cors-get": "gsutil cors get gs://mtgify.org",
+    "cors-set": "gsutil cors set gcp-cors.json gs://mtgify.org",
     "ci": "jest --watch",
     "test": "jest",
     "build": "rm dist/*.js && browserify lib/index.js -t babelify -p tinyify > dist/autocard.js",

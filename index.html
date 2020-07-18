@@ -32,7 +32,8 @@
   <script>
     if (!window.location.href.includes('https://mtgify.org')) {
       MTGIFY_CONFIG = {
-        apiUrl: window.location.origin + window.location.pathname + '/../../',
+        // apiUrl: window.location.origin + window.location.pathname + '/../../',
+        apiUrl: `https://storage.googleapis.com/mtgify.org`,
         // for offline testing
         // testImagePath: '../test/CardImage.jpg',
       }
