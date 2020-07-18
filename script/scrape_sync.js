@@ -1,5 +1,5 @@
-'use strict'
+const MtgJson = require('../lib/MtgJson');
 
-const MtgJson = require('../lib/MtgJson')
-
-MtgJson.scrapeJsonSync().then(msg => console.log(msg))
+(async () => {
+  await MtgJson.scrapeJsonSync();
+})();
