@@ -1,5 +1,5 @@
-'use strict'
+const MtgJson = require('../lib/MtgJson');
 
-const MtgJson = require('../lib/MtgJson')
-
-MtgJson.generateAllCustomJson().then(msg => console.log('all done!', msg))
+(async () => {
+  await MtgJson.generateAllCustomJson();
+})();

@@ -1,4 +1,6 @@
-export PATH=$PATH:/home/ec2-user/.nvm/versions/node/v8.9.1/bin/
+# rebuild code, gen everything, upload everything
+
+export PATH=$PATH:/home/ec2-user/.nvm/versions/node/v10.16.0/bin/
 export $(cat .env* | grep -v ^# | xargs)
 
 # https://github.com/npm/npm/issues/17722
@@ -7,6 +9,5 @@ npm prune
 git checkout -- package-lock.json
 
 npm run build
-node script/upload_s3_code.js
-
-node script/gen_json.js && node script/upload_s3_json.js
+npm run cron-code
+npm run cron-json

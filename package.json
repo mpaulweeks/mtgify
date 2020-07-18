@@ -4,6 +4,13 @@
   "description": "assorted tools for MTG apps",
   "main": "index.js",
   "scripts": {
+    "cors-get": "gsutil cors get gs://mtgify.org",
+    "cors-set": "gsutil cors set gcp-cors.json gs://mtgify.org",
+    "json-scrape": "node script/scrape.js",
+    "json-gen": "node script/gen_json.js",
+    "json-upload": "node script/upload_json.js && node script/upload_version.js",
+    "cron-json": "npm run json-scrape && npm run json-gen && npm run json-upload",
+    "cron-code": "npm run build && node script/upload_code.js",
     "ci": "jest --watch",
     "test": "jest",
     "build": "rm dist/*.js && browserify lib/index.js -t babelify -p tinyify > dist/autocard.js",
@@ -20,10 +27,11 @@
   },
   "homepage": "https://github.com/mpaulweeks/mtgify#readme",
   "engines": {
-    "node": "8.9.1",
-    "npm": ">=5.1.1"
+    "node": "10.16.0",
+    "npm": "6.9.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-preset-stage-2": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^16.5.0",
@@ -32,9 +40,10 @@
     "watchify": "^3.11.1"
   },
   "dependencies": {
+    "@google-cloud/storage": "^5.1.2",
     "JSONStream": "^1.3.5",
-    "aws-sdk": "^2.610.0",
     "event-stream": "^4.0.1",
+    "natives": "^1.1.6",
     "node-fetch": "^2.6.0",
     "unzip": "^0.1.11"
   },
