@@ -7,5 +7,4 @@ export $(cat .env* | grep -v ^# | xargs)
 npm install
 git checkout -- package-lock.json
 
-npm run cron-code
-npm run cron-json
+npm run cron-code && npm run cron-json
