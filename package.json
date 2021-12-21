@@ -13,7 +13,7 @@
     "cron-code": "npm run build && node script/upload_code.js",
     "ci": "jest --watch",
     "test": "jest",
-    "build": "rm dist/*.js && browserify lib/index.js -t babelify -p tinyify > dist/autocard.js",
+    "build": "rimraf dist/*.js && browserify lib/index.js -t babelify -p tinyify > dist/autocard.js",
     "watch": "watchify lib/index.js -t babelify -o build/autocard.js --debug --verbose"
   },
   "repository": {
@@ -26,25 +26,22 @@
     "url": "https://github.com/mpaulweeks/mtgify/issues"
   },
   "homepage": "https://github.com/mpaulweeks/mtgify#readme",
-  "engines": {
-    "node": "10.16.0",
-    "npm": "6.9.0"
-  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-stage-2": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^16.5.0",
     "jest": "^26.1.0",
+    "rimraf": "^3.0.2",
     "tinyify": "^2.5.2",
     "watchify": "^3.11.1"
   },
   "dependencies": {
-    "@google-cloud/storage": "^5.1.2",
+    "@google-cloud/storage": "^5.16.1",
     "JSONStream": "^1.3.5",
     "event-stream": "^4.0.1",
     "natives": "^1.1.6",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.0",
     "unzip": "^0.1.11"
   },
   "babel": {
